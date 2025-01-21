@@ -1,0 +1,24 @@
+# Paqueterías
+
+- imakeidx
+- inputenc
+- fontenc
+- amsmath
+- amsfonts
+- mathtools
+- amssymb
+- amsthm
+- hyperref
+- comment
+- graphicx
+- geometry
+- array
+- stackrel
+- babel
+
+Las paqueterías las agregaremos a nuestro documento posterior al comando `\documentclass{article}` que parece en la primer línea haciendo uso del comando `\usepackage{*nombre del paquete*}`[^1]. Ejemplo de uso
+
+[^1]: Para todos los comandos se agrega `\` al principio.
+
+`\documentclass{article}`  
+`\usepackage{amsmath}`

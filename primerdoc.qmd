@@ -1,0 +1,110 @@
+# Primer documento
+## Inicio
+Para comenzar a trabajar un documento nuevo podemos seleccionar la opción de **Blank Project**. Sin embargo, también podemos hacer uso de algunos templates que Overleaf ya tiene integrado.
+
+Las opciones disponibles son:
+
+- Jounal articles
+- Bibliographies
+- Books
+- Calendars
+- CVs and resumes
+- Formal letters
+- Assignments
+- Newsletters
+- Posters
+- Presentations
+- Reports
+- Theses
+
+Por defecto un documento nuevo incluye **título, autor, fecha**.  
+Para el título se utiliza el comando `\title{*aquí va el título*}`.  
+Para el autor se utiliza el comando `\author{*aquí va el nombre del autor*}`.
+Para la fecha se utiliza el comando `\date{}`.
+
+Estos tres datos aparecen en el documento utilizando el comando `\maketitle` .
+
+
+## Secciones, Subsecciones, Subsubsecciones
+
+Para darle organización a nuestro documento podemos agregar **Secciones** con el comando `\section{*aquí va el nombre de la sección*}`.
+
+Si queremos dividir nuestra sección podemos hacerlo usando las **subsecciones** mediante el comando `\subsection{}`.
+
+Si todavía queremos dividir esas subsecciones lo hacemos con las **subsubsecciones** con el comando `\subsubseccion{}`.
+
+Un ejemplo de como se vería estructurado un documento dividido con los comandos anteriores:
+```latex
+\section{Primer parcial}
+    \subsection{Límites}
+        \subsubsection{Indeterminados}
+        \subsubsection{Infinitos}
+    \subsection{Continuidad}
+        \subsubsection{Criterios}
+        \subsubsection{Aplicaciones}
+\section{Segundo parcial}
+    \subsection{Derivación}
+        \subsubsection{Reglas de derivación}
+        \subsubsection{Regla de la cadena}
+        \subsubsection{Aplicaciones}
+\section{Tercer parcial}
+    \subsection{Antiderivada}
+        \subsubsection{Introducción}
+    \subsection{Integración}
+        \subsubsection{Sumas de Riemann}
+        \subsubsection{Reglas de integración}
+        \subsubsection{Cambio de variable}
+    \subsection{Ecuaciones diferenciales}
+        \subsubsection{Diferenciales}
+```
+[^1]
+
+[^1]: Los tabuladores en cada línea no son por defecto, se ingresaron manualmente para un mejor orden. 
+
+Salida:
+
+1. **Primer parcial**
+
+   1.1 **Límites**
+
+      1.1.1 **Indeterminados**
+
+      1.1.2 **Infinitos**
+
+   1.2 **Continuidad**
+
+      1.2.1 **Criterios**
+
+      1.2.2 **Aplicaciones**
+
+2. **Segundo parcial**
+
+   2.1 **Derivación**
+
+      2.1.1 **Reglas de derivación**
+
+      2.1.2 **Regla de la cadena**
+
+      2.1.3 **Aplicaciones**
+
+3. **Tercer parcial**
+
+   3.1 **Antiderivada**
+
+      3.1.1 **Introducción**
+
+   3.2 **Integración**
+
+      3.2.1 **Sumas de Riemann**
+
+      3.2.2 **Reglas de integración**
+
+      3.2.3 **Cambio de variable**
+
+   3.3 **Ecuaciones diferenciales**
+
+      3.3.1 **Diferenciales**
+
+
+
+Si queremos que no se enumeren es necesario modificar los comandos y utilizar `\section*{},\subsection*{},\subsubsection*{}`.
