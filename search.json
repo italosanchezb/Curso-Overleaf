@@ -10,21 +10,51 @@
     ]
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
+    "objectID": "paqueterias.html#footnotes",
+    "href": "paqueterias.html#footnotes",
     "title": "1  Paqueterías",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "text": "Para todos los comandos se agrega \\ al principio.↩︎",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Paqueterías</span>"
     ]
   },
   {
-    "objectID": "summary.html",
-    "href": "summary.html",
+    "objectID": "primerdoc.html",
+    "href": "primerdoc.html",
     "title": "2  Primer documento",
     "section": "",
-    "text": "2.1 Secciones, Subsecciones, Subsubsecciones",
+    "text": "2.1 Inicio\nPara comenzar a trabajar un documento nuevo podemos seleccionar la opción de Blank Project. Sin embargo, también podemos hacer uso de algunos templates que Overleaf ya tiene integrado.\nLas opciones disponibles son:\nPor defecto un documento nuevo incluye título, autor, fecha.\nPara el título se utiliza el comando \\title{*aquí va el título*}.\nPara el autor se utiliza el comando \\author{*aquí va el nombre del autor*}. Para la fecha se utiliza el comando \\date{}.\nEstos tres datos aparecen en el documento utilizando el comando \\maketitle .",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Primer documento</span>"
+    ]
+  },
+  {
+    "objectID": "primerdoc.html#inicio",
+    "href": "primerdoc.html#inicio",
+    "title": "2  Primer documento",
+    "section": "",
+    "text": "Jounal articles\nBibliographies\nBooks\nCalendars\nCVs and resumes\nFormal letters\nAssignments\nNewsletters\nPosters\nPresentations\nReports\nTheses",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Primer documento</span>"
+    ]
+  },
+  {
+    "objectID": "primerdoc.html#secciones-subsecciones-subsubsecciones",
+    "href": "primerdoc.html#secciones-subsecciones-subsubsecciones",
+    "title": "2  Primer documento",
+    "section": "2.2 Secciones, Subsecciones, Subsubsecciones",
+    "text": "2.2 Secciones, Subsecciones, Subsubsecciones\nPara darle organización a nuestro documento podemos agregar Secciones con el comando \\section{*aquí va el nombre de la sección*}.\nSi queremos dividir nuestra sección podemos hacerlo usando las subsecciones mediante el comando \\subsection{}.\nSi todavía queremos dividir esas subsecciones lo hacemos con las subsubsecciones con el comando \\subsubseccion{}.\nUn ejemplo de como se vería estructurado un documento dividido con los comandos anteriores:\n\\section{Primer parcial}\n    \\subsection{Límites}\n        \\subsubsection{Indeterminados}\n        \\subsubsection{Infinitos}\n    \\subsection{Continuidad}\n        \\subsubsection{Criterios}\n        \\subsubsection{Aplicaciones}\n\\section{Segundo parcial}\n    \\subsection{Derivación}\n        \\subsubsection{Reglas de derivación}\n        \\subsubsection{Regla de la cadena}\n        \\subsubsection{Aplicaciones}\n\\section{Tercer parcial}\n    \\subsection{Antiderivada}\n        \\subsubsection{Introducción}\n    \\subsection{Integración}\n        \\subsubsection{Sumas de Riemann}\n        \\subsubsection{Reglas de integración}\n        \\subsubsection{Cambio de variable}\n    \\subsection{Ecuaciones diferenciales}\n        \\subsubsection{Diferenciales}\n1\nSalida:\n\nPrimer parcial\n1.1 Límites\n1.1.1 Indeterminados\n1.1.2 Infinitos\n1.2 Continuidad\n1.2.1 Criterios\n1.2.2 Aplicaciones\nSegundo parcial\n2.1 Derivación\n2.1.1 Reglas de derivación\n2.1.2 Regla de la cadena\n2.1.3 Aplicaciones\nTercer parcial\n3.1 Antiderivada\n3.1.1 Introducción\n3.2 Integración\n3.2.1 Sumas de Riemann\n3.2.2 Reglas de integración\n3.2.3 Cambio de variable\n3.3 Ecuaciones diferenciales\n3.3.1 Diferenciales\n\nSi queremos que no se enumeren es necesario modificar los comandos y utilizar \\section*{},\\subsection*{},\\subsubsection*{}.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Primer documento</span>"
+    ]
+  },
+  {
+    "objectID": "primerdoc.html#footnotes",
+    "href": "primerdoc.html#footnotes",
+    "title": "2  Primer documento",
+    "section": "",
+    "text": "Los tabuladores en cada línea no son por defecto, se ingresaron manualmente para un mejor orden.↩︎",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Primer documento</span>"
     ]
