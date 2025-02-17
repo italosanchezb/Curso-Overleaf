@@ -103,6 +103,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -176,6 +205,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#inicio" id="toc-inicio" class="nav-link active" data-scroll-target="#inicio"><span class="header-section-number">2.1</span> Inicio</a></li>
   <li><a href="#secciones-subsecciones-subsubsecciones" id="toc-secciones-subsecciones-subsubsecciones" class="nav-link" data-scroll-target="#secciones-subsecciones-subsubsecciones"><span class="header-section-number">2.2</span> Secciones, Subsecciones, Subsubsecciones</a></li>
+  <li><a href="#comentarios-y-saltos-de-línea" id="toc-comentarios-y-saltos-de-línea" class="nav-link" data-scroll-target="#comentarios-y-saltos-de-línea"><span class="header-section-number">2.3</span> Comentarios y saltos de línea</a></li>
+  <li><a href="#ecuaciones" id="toc-ecuaciones" class="nav-link" data-scroll-target="#ecuaciones"><span class="header-section-number">2.4</span> Ecuaciones</a>
+  <ul class="collapse">
+  <li><a href="#ecuaciones-en-texto" id="toc-ecuaciones-en-texto" class="nav-link" data-scroll-target="#ecuaciones-en-texto"><span class="header-section-number">2.4.1</span> Ecuaciones en texto</a></li>
+  <li><a href="#ecuaciones-centradas" id="toc-ecuaciones-centradas" class="nav-link" data-scroll-target="#ecuaciones-centradas"><span class="header-section-number">2.4.2</span> Ecuaciones centradas</a></li>
+  <li><a href="#multiecuaciones" id="toc-multiecuaciones" class="nav-link" data-scroll-target="#multiecuaciones"><span class="header-section-number">2.4.3</span> Multiecuaciones</a></li>
+  <li><a href="#ecuaciones-alineadas" id="toc-ecuaciones-alineadas" class="nav-link" data-scroll-target="#ecuaciones-alineadas"><span class="header-section-number">2.4.4</span> Ecuaciones alineadas</a></li>
+  <li><a href="#texto-dentro-de-ecuaciones" id="toc-texto-dentro-de-ecuaciones" class="nav-link" data-scroll-target="#texto-dentro-de-ecuaciones"><span class="header-section-number">2.4.5</span> Texto dentro de ecuaciones</a></li>
+  </ul></li>
+  <li><a href="#listas" id="toc-listas" class="nav-link" data-scroll-target="#listas"><span class="header-section-number">2.5</span> Listas</a>
+  <ul class="collapse">
+  <li><a href="#listas-no-numeradas" id="toc-listas-no-numeradas" class="nav-link" data-scroll-target="#listas-no-numeradas"><span class="header-section-number">2.5.1</span> Listas no numeradas</a></li>
+  <li><a href="#listas-numeradas" id="toc-listas-numeradas" class="nav-link" data-scroll-target="#listas-numeradas"><span class="header-section-number">2.5.2</span> Listas numeradas</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -277,13 +320,178 @@ Para el autor se utiliza el comando <code>\author{*aquí va el nombre del autor*
 <p>3.3.1 <strong>Diferenciales</strong></p></li>
 </ol>
 <p>Si queremos que no se enumeren es necesario modificar los comandos y utilizar <code>\section*{},\subsection*{},\subsubsection*{}</code>.</p>
+</section>
+<section id="comentarios-y-saltos-de-línea" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="comentarios-y-saltos-de-línea"><span class="header-section-number">2.3</span> Comentarios y saltos de línea</h2>
+<p>Una herramienta útil al momento de construir nuestro documento son agregar los comentarios, estas líneas en el código no se compilan y por tanto no aparecen impresas en el documento. Para agregar un comentario es por medio del símbolo <code>%</code>. Aquí un ejemplo del uso</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>{<span class="ex">article</span>}</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">% Paquetería</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">imakeidx</span>}</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[utf8]{<span class="ex">inputenc</span>}</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[T1]{<span class="ex">fontenc</span>}</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amsmath</span>}</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amsfonts</span>}</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">mathtools</span>}</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amssymb</span>}</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amsthm</span>}</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">hyperref</span>}</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">comment</span>}</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">graphicx</span>}</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">geometry</span>}</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">array</span>}</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">stackrel</span>}</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[spanish]{<span class="ex">babel</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Otra función necesaria en la redacción de un texto son los saltos de línea, esto lo podemos hacer de varias formas:</p>
+<ul>
+<li>Doble enter:</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>El hecho ocurrió en el mes de febrero de 1969, al norte de Boston, en Cambridge. No lo </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>escribí inmediatamente porque mi primer propósito fue olvidarlo, para no perder la </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>razón. Ahora, en 1972, pienso que si lo escribo, los otros lo leerán como un cuento y, </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>con los años, lo será tal vez para mí.</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>Sé que fue casi atroz mientras duró y más aún durante las desveladas noches que lo </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>siguieron. Ello no significa que su relato pueda conmover a un tercero. </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Utilizar <code>\\</code>:</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>El hecho ocurrió en el mes de febrero de 1969, al norte de Boston, en Cambridge. No lo </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>escribí inmediatamente porque mi primer propósito fue olvidarlo, para no perder la </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>razón. Ahora, en 1972, pienso que si lo escribo, los otros lo leerán como un cuento y, </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>con los años, lo será tal vez para mí. <span class="fu">\\</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>Sé que fue casi atroz mientras duró y más aún durante las desveladas noches que lo </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>siguieron. Ello no significa que su relato pueda conmover a un tercero. </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Comando <code>\newline</code>:</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>El hecho ocurrió en el mes de febrero de 1969, al norte de Boston, en Cambridge. No lo </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>escribí inmediatamente porque mi primer propósito fue olvidarlo, para no perder la </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>razón. Ahora, en 1972, pienso que si lo escribo, los otros lo leerán como un cuento y, </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>con los años, lo será tal vez para mí. <span class="fu">\newline</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>Sé que fue casi atroz mientras duró y más aún durante las desveladas noches que lo </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>siguieron. Ello no significa que su relato pueda conmover a un tercero. </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Además, si queremos agregar espacios en blanco, ya sean horizontales o vérticales podemos hacer uso de los comandos <code>\hspace{}</code> y <code>\vspace{}</code>.</p>
+</section>
+<section id="ecuaciones" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="ecuaciones"><span class="header-section-number">2.4</span> Ecuaciones</h2>
+<p>La gran ventaja de utilizar Latex (Overleaf) sobre otros procesadores de texto son las ventajas que nos da al momento de escribir ecuaciones.</p>
+<section id="ecuaciones-en-texto" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="ecuaciones-en-texto"><span class="header-section-number">2.4.1</span> Ecuaciones en texto</h3>
+<p>Lo primero que necesitamos es darle formato de ecuación a una expresión que se encuentra dentro de un texto. Por ejemplo, supongamos que tenemos la línea de texto siguiente:</p>
+<p>“La variable x es la variable independiente y y es la variable dependiente”.</p>
+<p>Aquí se presenta un problema, pues el conectivo “y” se confunde con la variable “y”. Para hacer esta distinción utilizamos el formato de ecuación, esto se hace encerrando entre símbolos <code>$$</code> a la ecuación.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>La variable <span class="ss">$x$</span> es la variable independiente y <span class="ss">$y$</span> es la variable dependiente.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>La salida nos quedaría tal que así:</p>
+<p>La variable <span class="math inline">\(x\)</span> es la variable independiente y <span class="math inline">\(y\)</span> es la variable dependiente.</p>
+</section>
+<section id="ecuaciones-centradas" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="ecuaciones-centradas"><span class="header-section-number">2.4.2</span> Ecuaciones centradas</h3>
+<p>Por otro lado, hay ocaciones que lo que necesitamos es una ecuación completa y que esta ecuación se encuentre centrada. Esto se puede lograr de varias formas, sin embago, la más útil y para seguir un formato similar a lo largo de este documento se hará uso del comando <code>\begin{equation}</code><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Un ejemplo con su respectiva salida sería:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">equation</span>}</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ss">f(x) = 3x^5-x^4+8x^2-x+1.</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">equation</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math display">\[
+\begin{aligned}
+f(x) &amp;= 3x^5-x^4+8x^2-x+1. \hspace{1cm} (1)
+\end{aligned}
+\]</span></p>
+<p>Observemos que la ecuación se imprime numerada, en este caso con el (1), esa numeración depende de nuestro documento y de las ecuaciones que hayamos puesto anteriormente. Si deseamos quitar la numeración utilizamos el comando <code>\begin{equation*}</code>.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">equation*</span>}</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ss">f(x) = 3x^5-x^4+8x^2-x+1.</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">equation*</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math display">\[
+f(x) = 3x^5-x^4+8x^2-x+1.
+\]</span></p>
+</section>
+<section id="multiecuaciones" class="level3" data-number="2.4.3">
+<h3 data-number="2.4.3" class="anchored" data-anchor-id="multiecuaciones"><span class="header-section-number">2.4.3</span> Multiecuaciones</h3>
+<p>Ahora, si lo que se necesita es escribir varias ecuaciones centradas de forma continua sin utilizar el comando <code>\begin{equation}</code> varias veces, es mejor utilizar el comando <code>\begin{gather}</code> o en su defecto <code>\begin{gather*}</code> si es que no queremos numerarlas. Aquí un ejemplo:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">gather*</span>}</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ss">f(x) = 1+x^2, </span><span class="sc">\\</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ss">g(x) = x^3-2x+2, </span><span class="sc">\\</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="ss">h(x) = 8x-3.</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">gather*</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math display">\[
+f(x) = 1+x^2,
+\]</span></p>
+<p><span class="math display">\[
+g(x) = x^3-2x+2,
+\]</span></p>
+<p><span class="math display">\[
+h(x) = 8x-3.
+\]</span></p>
+</section>
+<section id="ecuaciones-alineadas" class="level3" data-number="2.4.4">
+<h3 data-number="2.4.4" class="anchored" data-anchor-id="ecuaciones-alineadas"><span class="header-section-number">2.4.4</span> Ecuaciones alineadas</h3>
+<p>En cambio, si lo que buscamos es que las ecuaciones queden alineadas tomando de referencia algún símbolo, utilizamos el comando <code>\begin{align}</code> o <code>\begin{align*}</code> para que no se enumeren. Es importante añadir el símbolo <code>&amp;</code> para fijar el símbolo deseado.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align*</span>}</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ss">f(x) &amp;= 1+x^2, </span><span class="sc">\\</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ss">g(x) &amp;= x^3-2x+2, </span><span class="sc">\\</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="ss">h(x) &amp;= 8x-3.</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">align*</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math display">\[
+\begin{aligned}
+f(x) &amp;= 1+x^2, \\
+g(x) &amp;= x^3-2x+2, \\
+h(x) &amp;= 8x-3.
+\end{aligned}
+\]</span></p>
+</section>
+<section id="texto-dentro-de-ecuaciones" class="level3" data-number="2.4.5">
+<h3 data-number="2.4.5" class="anchored" data-anchor-id="texto-dentro-de-ecuaciones"><span class="header-section-number">2.4.5</span> Texto dentro de ecuaciones</h3>
+<p>Si lo que se necesita es agregar algún texto dentro de una ecuación y que este texto no aparezca en formato de ecuación, se pueden utilizar dos comando <code>\text{}</code> y <code>\textup{}</code>.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a> x^2-1&gt;0 <span class="fu">\text</span>{ si } x&gt;1.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math display">\[
+x^2-1&gt;0\text{ si } x&gt;1.
+\]</span></p>
+<p><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+</section>
+</section>
+<section id="listas" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="listas"><span class="header-section-number">2.5</span> Listas</h2>
+<p>Otra herramiento necesaria en algunos documentos es la creación de listas, estas listas pueden o no estar numeradas, veamos como escribir cada una.</p>
+<section id="listas-no-numeradas" class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="listas-no-numeradas"><span class="header-section-number">2.5.1</span> Listas no numeradas</h3>
+<p>Para escribir una lista no numerada el comando a usar es el <code>\begin{itemize}</code>.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>Lista de conceptos básicos de cálculo I:</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">itemize</span>}</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> Función</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> Límite</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> Continuidad</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> Pendiente</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> Derivada</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">itemize</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Lista de conceptos básicos de cálculo I: - Función - Límite - Continuidad - Pendiente - Derivada</p>
+</section>
+<section id="listas-numeradas" class="level3" data-number="2.5.2">
+<h3 data-number="2.5.2" class="anchored" data-anchor-id="listas-numeradas"><span class="header-section-number">2.5.2</span> Listas numeradas</h3>
+<p>Por su parte para las listas numeradas se utiliza el comando <code>\begin{enumerate}</code>.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>Lista de conceptos básicos de cálculo I:</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">enumerate</span>}</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> Función</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> Límite</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> Continuidad</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> Pendiente</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> Derivada</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">enumerate</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Lista de conceptos básicos de cálculo I:</p>
+<ol type="1">
+<li><p>Función</p></li>
+<li><p>Límite</p></li>
+<li><p>Continuidad</p></li>
+<li><p>Pendiente</p></li>
+<li><p>Derivada</p></li>
+</ol>
 
 
+</section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn1"><p>Los tabuladores en cada línea no son por defecto, se ingresaron manualmente para un mejor orden.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Al momento de escribir cualquier comando que comience por <code>\begin{}</code> automáticamente el programa nos da el comando <code>\end{}</code>, en caso de no aparecer habrá que añardirse.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Es importante agregar espacios antes y después del texto para una mejor impresión.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
