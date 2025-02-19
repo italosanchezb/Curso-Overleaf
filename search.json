@@ -88,5 +88,105 @@
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Primer documento</span>"
     ]
+  },
+  {
+    "objectID": "comandos.html",
+    "href": "comandos.html",
+    "title": "3  Comandos",
+    "section": "",
+    "text": "3.1 Superíndices y Subíndices",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Comandos</span>"
+    ]
+  },
+  {
+    "objectID": "comandos.html#superíndices-y-subíndices",
+    "href": "comandos.html#superíndices-y-subíndices",
+    "title": "3  Comandos",
+    "section": "",
+    "text": "3.1.1 Superíndices\nSi queremos agregar un superíndice, lo hacemos agregando un ^, por ejemplo:\n\\begin{equation*}\nx^2\n\\end{equation*}\n\\[\nx^2\n\\]\nSi queremos agregar un exponente que incluya varios símbolos es neceario encerrarlo entre llaves ^{}.\n\\begin{equation*}\nx^{2y}\n\\end{equation*}\n\\[\nx^{2y}\n\\]\n\n\n3.1.2 Subíndices\nSi queremos agregar un subíndice se hace por medio del símbolo _.\n\\begin{equation*}\nx_i\n\\end{equation*}\n\\[\nx_i\n\\]\nDe igual manera si queremos agregar varios símbolos como subíndices es necesario encerrar entre llaves _{}.\n\\begin{equation*}\nx_{ij}\n\\end{equation*}\n\\[\nx_{ij}\n\\]\nAmbos comandos son compatibles y también podemos anidar varios de esos comandos.\nAnidar superíndices\n\\begin{equation*}\nx^{x^{x^{x^{x}}}}\n\\end{equation*}\n\\[\nx^{x^{x^{x^{x}}}}\n\\]\nAnidar subíndices\n\\begin{equation*}\nx_{x_{x_{x_{x}}}}\n\\end{equation*}\n\\[\nx_{x_{x_{x_{x}}}}\n\\]\nSubíndices y Superíndices juntos\n\\begin{equation*}\nx_{ij}^{y_0}\n\\end{equation*}\n\\[\nx_{ij}^{y_0}\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Comandos</span>"
+    ]
+  },
+  {
+    "objectID": "comandos.html#fracciones",
+    "href": "comandos.html#fracciones",
+    "title": "3  Comandos",
+    "section": "3.2 Fracciones",
+    "text": "3.2 Fracciones\nSi lo que necesitamos es expresar una fracción, se puede hacer por medio de dos comandos \\dfrac{\"numerador\"}{\"denominador\"} o \\frac{\"numerador\"}{\"denominador\"}. Más adelante se explica la diferencia entre ambos comandos.\n\\begin{equation*}\n\\dfrac{x^2-2x+1}{x-1}\n\\end{equation*}\n\\[\n\\dfrac{x^2-2x+1}{x-1}\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Comandos</span>"
+    ]
+  },
+  {
+    "objectID": "comandos.html#raíces",
+    "href": "comandos.html#raíces",
+    "title": "3  Comandos",
+    "section": "3.3 Raíces",
+    "text": "3.3 Raíces\nPara expresar una raíz es utilizando el comando \\sqrt{}.\n\\begin{equation*}\n\\sqrt{1-x^2}\n\\end{equation*}\n\\[\n\\sqrt{1-x^2}\n\\]\nSi necesitamos cambiar la raíz es modificando el comando \\sqrt[\"grado del radical\"]{}\n\\begin{equation*}\n\\sqrt[4]{x}\n\\end{equation*}\n\\[\n\\sqrt[4]{1-x^2}\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Comandos</span>"
+    ]
+  },
+  {
+    "objectID": "comandos.html#paretesís-corchetes-llaves",
+    "href": "comandos.html#paretesís-corchetes-llaves",
+    "title": "3  Comandos",
+    "section": "3.4 Paretesís, Corchetes, Llaves",
+    "text": "3.4 Paretesís, Corchetes, Llaves\nPara agregar las parentesís y corchetes lo hacemos directamente escribiendo los símbolos, sin embargo, estos no se ajustan a los tamaños de las ecuaciones, para hacer esos ajustes se agregan los comandos \\left y \\right antes y después de los símbolos respectivamente. Aquí algunos ejemplos:\nParentesís y Corchetes sin necesidad de ajustes\n\\begin{gather*}\n(x^2-2x+6)\\\\\n[x^2-2x+6]\n\\end{gather*}\n\\[\n\\begin{aligned}\n(x^2-2x+6)\\\\\n[x^2-2x+6]\n\\end{aligned}\n\\]\nParentesís y Corchetes con necesidad de ajustes\nSin ajuste\n\\begin{gather*}\n(\\dfrac{x^2-2x+6}{x})\\\\\n[\\dfrac{x^2-2x+6}{x}]\n\\end{gather*}\n\\[\n\\begin{aligned}\n(\\dfrac{x^2-2x+6}{x})\\\\\n[\\dfrac{x^2-2x+6}{x}]\n\\end{aligned}\n\\]\nCon ajuste\n\\begin{gather*}\n\\left(\\dfrac{x^2-2x+6}{x}\\right)\\\\\n\\left[\\dfrac{x^2-2x+6}{x}\\right]\n\\end{gather*}\n\\[\n\\begin{aligned}\n\\left(\\dfrac{x^2-2x+6}{x}\\right)\\\\\n\\left[\\dfrac{x^2-2x+6}{x}\\right]\n\\end{aligned}\n\\]\nPor otra parte si lo que se necesita es utilizar las llaves, se deben agregar de la siguiente forma \\{ \\}. De igual forma para realizar un ajuste de tamaño es por medio de los comandos \\left y \\right antes y después de los símbolos. Aquí algunos ejemplos:\nLlaves sin necesidad de ajustes\n\\begin{equation*}\n\\{x^2-2x+6\\}\n\\end{equation*}\n\\[\n\\begin{aligned}\n\\{x^2-2x+6\\}\n\\end{aligned}\n\\]\nLlaves con necesidad de ajustes Sin ajuste\n\\begin{equation*}\n\\{\\dfrac{x^2-2x+6}{x}\\}\n\\end{equation*}\n\\[\n\\begin{aligned}\n\\{\\dfrac{x^2-2x+6}{x}\\}\n\\end{aligned}\n\\]\nCon ajuste\n\\begin{gather*}\n\\left\\{\\dfrac{x^2-2x+6}{x}\\right\\}\n\\end{gather*}\n\\[\n\\begin{aligned}\n\\left\\{\\dfrac{x^2-2x+6}{x}\\right\\}\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Comandos</span>"
+    ]
+  },
+  {
+    "objectID": "comandos.html#flechas",
+    "href": "comandos.html#flechas",
+    "title": "3  Comandos",
+    "section": "3.5 Flechas",
+    "text": "3.5 Flechas\nEsta es una lista con algunas de las distintas flechas que se pueden usar.\n\n\n\nComando\nImpresión\n\n\n\n\n\\rightarrow\n\\(\\rightarrow\\)\n\n\n\\leftarrow\n\\(\\leftarrow\\)\n\n\n\\nrightarrow\n\\(\\nrightarrow\\)\n\n\n\\nleftarrow\n\\(\\nleftarrow\\)\n\n\n\\uparrow\n\\(\\uparrow\\)\n\n\n\\downarrow\n\\(\\downarrow\\)\n\n\n\\Rightarrow\n\\(\\Rightarrow\\)\n\n\n\\Leftarrow\n\\(\\Leftarrow\\)\n\n\n\\Uparrow\n\\(\\Uparrow\\)\n\n\n\\Downarrow\n\\(\\Downarrow\\)\n\n\n\nAlgunos casos especiales que también nos sirven son:\n\n\n\nComando\nImpresión\n\n\n\n\nto\n\\(\\to\\)\n\n\n\\implies\n\\(\\implies\\)\n\n\n\nPara consultar más de estos comandos ver Manual de Latex.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Comandos</span>"
+    ]
+  },
+  {
+    "objectID": "comandos.html#letras-griegas",
+    "href": "comandos.html#letras-griegas",
+    "title": "3  Comandos",
+    "section": "3.6 Letras griegas",
+    "text": "3.6 Letras griegas\nEstos son algunos de los comandos para las letras griegas.\n\n\n\nComando\nImpresión\n\n\n\n\n\\alpha\n\\(\\alpha\\)\n\n\n\\beta\n\\(\\beta\\)\n\n\n\\gamma\n\\(\\gamma\\)\n\n\n\\epsilon\n\\(\\epsilon\\)\n\n\n\\varepsilon\n\\(\\varepsilon\\)\n\n\n\\delta\n\\(\\delta\\)\n\n\n\\pi\n\\(\\pi\\)\n\n\n\nPara más comandos de letras griegas Manuel de Latex - Letras Griegas.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Comandos</span>"
+    ]
+  },
+  {
+    "objectID": "comandos.html#funciones-trigonométricas",
+    "href": "comandos.html#funciones-trigonométricas",
+    "title": "3  Comandos",
+    "section": "3.7 Funciones trigonométricas",
+    "text": "3.7 Funciones trigonométricas\nEsta es la lista de las funciones trigonométricas.\n\n\n\nComando\nImpresión\n\n\n\n\n$\\sin(x)$\n\\(\\sin(x)\\)\n\n\n$\\cos(x)$\n\\(\\cos(x)\\)\n\n\n$\\tan(x)$\n\\(\\tan(x)\\)\n\n\n$\\csc(x)$\n\\(\\csc(x)\\)\n\n\n$\\sec(x)$\n\\(\\sec(x)\\)\n\n\n$\\cot(x)$\n\\(\\cot(x)\\)\n\n\n\nNotemos que al utilizar los parentesís es compatible con lo visto anteriormente para ellos.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Comandos</span>"
+    ]
+  },
+  {
+    "objectID": "comandos.html#comandos-para-conjuntos",
+    "href": "comandos.html#comandos-para-conjuntos",
+    "title": "3  Comandos",
+    "section": "3.8 Comandos para conjuntos",
+    "text": "3.8 Comandos para conjuntos\nYa vimos anteriormente que podemos agregar llaves con los comandos \\{ \\}. Sin embargo, hay otros comandos necesarios para la teoría de conjuntos, aquí repasamos algunos.\n\n3.8.1 Contenciones\nPara decir que un conjunto \\(A\\) es subconjunto de un conjunto \\(B\\) se utiliza el comando \\subset.\n\\begin{equation*}\nA \\subset B\n\\end{equation*}\n\\[\nA\\subset B\n\\]\nTambién puede escribirse en sentido opuesto, esto es usando \\supset.\n\\begin{equation*}\nB \\supset A\n\\end{equation*}\n\\[\nB \\supset A\n\\]\n\n\n3.8.2 Uniones\nEl comando para escribir la unión de un conjunto \\(A\\) con un conjunto \\(B\\) es con el comando \\cup.\n\\begin{equation*}\nA \\cup B\n\\end{equation*}\n\\[\nA\\cup B\n\\]\nEn caso de ser necesario unir una cantidad \\(n\\) de conjuntos se hace ajustando el símbolo de unión por medio del comando \\bigcup y para agregar límites es con los comandos de superíndice y subíndice.\n\\begin{equation*}\n\\bigcup_{i=1}^{n} A_i\n\\end{equation*}\n\\[\n\\bigcup_{i=1}^{n} A_i\n\\]\n\n\n3.8.3 Intersecciones\nEl comando para escribir la intersección de un conjunto \\(A\\) con un conjunto \\(B\\) es con el comando \\cap.\n\\begin{equation*}\nA \\cap B\n\\end{equation*}\n\\[\nA\\cap B\n\\]\nEn caso de ser necesario intersectar una cantidad \\(n\\) de conjuntos se hace ajustando el símbolo de intersección por medio del comando \\bigcap y para agregar límites es con los comandos de superíndice y subíndice.\n\\begin{equation*}\n\\bigcap_{i=1}^{n} A_i\n\\end{equation*}\n\\[\n\\bigcap_{i=1}^{n} A_i\n\\]\n\n\n3.8.4 Pertenencia\nPara escribir que un elemento pertenece a un conjunto se utiliza el comando \\in, si queremos denotar que el elemento no pertenece al conjunto es con el comando \\notin.\n\\begin{equation*}\nx\\in A\n\\end{equation*}\n\\[\nx\\in A\n\\]\n\\begin{equation*}\nx\\botin A\n\\end{equation*}\n\\[\nx\\notin A\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Comandos</span>"
+    ]
+  },
+  {
+    "objectID": "comandos.html#sumatorias-y-productos",
+    "href": "comandos.html#sumatorias-y-productos",
+    "title": "3  Comandos",
+    "section": "3.9 Sumatorias y Productos",
+    "text": "3.9 Sumatorias y Productos\n\n3.9.1 Sumatorias\nCuando vamos a agregar una sumatoria lo hacemos con el comando \\sum, en caso de querer agregar límites se hace con los comandos para subíndices y superíndices.\n\\begin{equation*}\n\n\\sum_{i=1}^{n} a_i \n\\end{equation*}\n\\[\n\\sum_{i=1}^{n} a_i\n\\]\n\n\n3.9.2 Productos\nCuando agregamos un producto lo hacemos con el comando \\prod, en caso de querer agregar límites se hace con los comandos para subíndices y superíndices.\n\\begin{equation*}\n\\prod_{i=1}^{n} a_i\n\\end{equation*}\n\\[\n\\prod_{i=1}^{n} a_i\n\\]\nSi solo vamos a multiplicar dos números podemos hacerlo por medio de los comandos \\times o \\cdot.\n\\begin{equation*}\na\\times b =\na\\cdot b \n\\end{equation*}\n\\[\na\\times b = a\\cdot b\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Comandos</span>"
+    ]
   }
 ]
