@@ -1,0 +1,593 @@
+# Comandos
+## Superíndices y Subíndices
+### Superíndices
+Si queremos agregar un *superíndice*, lo hacemos agregando un `^`, por ejemplo:
+
+```latex
+\begin{equation*}
+x^2
+\end{equation*}
+```
+
+$$
+x^2
+$$
+
+Si queremos agregar un exponente que incluya varios símbolos es neceario encerrarlo entre llaves `^{}`. 
+
+```latex
+\begin{equation*}
+x^{2y}
+\end{equation*}
+```
+
+$$
+x^{2y}
+$$
+
+### Subíndices
+Si queremos agregar un *subíndice* se hace por medio del símbolo `_`.
+
+```latex
+\begin{equation*}
+x_i
+\end{equation*}
+```
+$$
+x_i
+$$
+
+De igual manera si queremos agregar varios símbolos como subíndices es necesario encerrar entre llaves `_{}`.
+
+```latex
+\begin{equation*}
+x_{ij}
+\end{equation*}
+```
+$$
+x_{ij}
+$$ 
+
+Ambos comandos son compatibles y también podemos anidar varios de esos comandos.
+
+**Anidar superíndices**
+```latex
+\begin{equation*}
+x^{x^{x^{x^{x}}}}
+\end{equation*}
+```
+$$ 
+x^{x^{x^{x^{x}}}}
+$$
+
+**Anidar subíndices**
+```latex
+\begin{equation*}
+x_{x_{x_{x_{x}}}}
+\end{equation*}
+```
+$$
+x_{x_{x_{x_{x}}}}
+$$
+
+**Subíndices y Superíndices juntos**
+
+```latex
+\begin{equation*}
+x_{ij}^{y_0}
+\end{equation*}
+```
+$$
+x_{ij}^{y_0}
+$$
+
+## Fracciones
+Si lo que necesitamos es expresar una fracción, se puede hacer por medio de dos comandos `\dfrac{"numerador"}{"denominador"}` o `\frac{"numerador"}{"denominador"}`. Más adelante se explica la diferencia entre ambos comandos.
+
+```latex
+\begin{equation*}
+\dfrac{x^2-2x+1}{x-1}
+\end{equation*}
+```
+$$
+\dfrac{x^2-2x+1}{x-1}
+$$
+
+## Raíces
+Para expresar una raíz es utilizando el comando `\sqrt{}`.
+
+```latex
+\begin{equation*}
+\sqrt{1-x^2}
+\end{equation*}
+```
+$$
+\sqrt{1-x^2}
+$$
+
+Si necesitamos cambiar la raíz es modificando el comando `\sqrt["grado del radical"]{}`
+
+```latex
+\begin{equation*}
+\sqrt[4]{x}
+\end{equation*}
+```
+$$
+\sqrt[4]{1-x^2}
+$$
+
+## Paretesís, Corchetes, Llaves
+Para agregar las parentesís y corchetes lo hacemos directamente escribiendo los símbolos, sin embargo, estos no se ajustan a los tamaños de las ecuaciones, para hacer esos ajustes se agregan los comandos `\left` y `\right` antes y después de los símbolos respectivamente. Aquí algunos ejemplos:
+
+Parentesís y Corchetes sin necesidad de ajustes
+```latex
+\begin{gather*}
+(x^2-2x+6)\\
+[x^2-2x+6]
+\end{gather*}
+```
+$$
+\begin{aligned}
+(x^2-2x+6)\\
+[x^2-2x+6]
+\end{aligned}
+$$
+
+Parentesís y Corchetes con necesidad de ajustes
+
+*Sin ajuste*
+
+```latex
+\begin{gather*}
+(\dfrac{x^2-2x+6}{x})\\
+[\dfrac{x^2-2x+6}{x}]
+\end{gather*}
+```
+$$
+\begin{aligned}
+(\dfrac{x^2-2x+6}{x})\\
+[\dfrac{x^2-2x+6}{x}]
+\end{aligned}
+$$
+
+*Con ajuste*
+
+```latex
+\begin{gather*}
+\left(\dfrac{x^2-2x+6}{x}\right)\\
+\left[\dfrac{x^2-2x+6}{x}\right]
+\end{gather*}
+```
+$$
+\begin{aligned}
+\left(\dfrac{x^2-2x+6}{x}\right)\\
+\left[\dfrac{x^2-2x+6}{x}\right]
+\end{aligned}
+$$
+
+Por otra parte si lo que se necesita es utilizar las llaves, se deben agregar de la siguiente forma `\{ \}`. De igual forma para realizar un ajuste de tamaño es por medio de los comandos `\left` y `\right` antes y después de los símbolos. Aquí algunos ejemplos:
+
+Llaves sin necesidad de ajustes
+```latex
+\begin{equation*}
+\{x^2-2x+6\}
+\end{equation*}
+```
+$$
+\begin{aligned}
+\{x^2-2x+6\}
+\end{aligned}
+$$
+
+Llaves con necesidad de ajustes
+*Sin ajuste*
+```latex
+\begin{equation*}
+\{\dfrac{x^2-2x+6}{x}\}
+\end{equation*}
+```
+$$
+\begin{aligned}
+\{\dfrac{x^2-2x+6}{x}\}
+\end{aligned}
+$$
+
+*Con ajuste*
+```latex
+\begin{gather*}
+\left\{\dfrac{x^2-2x+6}{x}\right\}
+\end{gather*}
+```
+$$
+\begin{aligned}
+\left\{\dfrac{x^2-2x+6}{x}\right\}
+\end{aligned}
+$$
+
+## Flechas
+Esta es una lista con algunas de las distintas flechas que se pueden usar.
+
+| Comando | Impresión |
+|---------|-----------|
+| `\rightarrow` | $\rightarrow$ |
+| `\leftarrow` | $\leftarrow$ |
+| `\nrightarrow` | $\nrightarrow$ |
+| `\nleftarrow` | $\nleftarrow$ |
+| `\uparrow` | $\uparrow$ |
+| `\downarrow` | $\downarrow$ |
+| `\Rightarrow` | $\Rightarrow$|
+| `\Leftarrow` | $\Leftarrow$ |
+| `\Uparrow` | $\Uparrow$ |
+| `\Downarrow` | $\Downarrow$ |
+
+Algunos casos especiales que también nos sirven son:
+
+| Comando | Impresión |
+|---------|-----------|
+| `to` | $\to$ |
+| `\implies` | $\implies$ |
+
+Para consultar más de estos comandos ver [Manual de Latex](https://manualdelatex.com/simbolos#chapter3).
+
+## Letras griegas
+
+Estos son algunos de los comandos para las letras griegas.
+
+| Comando | Impresión |
+|----------|----------|
+| `\alpha` | $\alpha$ |
+| `\beta` | $\beta$ |
+| `\gamma` | $\gamma$ |
+| `\epsilon` | $\epsilon$ |
+| `\varepsilon` | $\varepsilon$ |
+| `\delta` | $\delta$ |
+| `\pi` | $\pi$ |
+
+Para más comandos de letras griegas [Manuel de Latex - Letras Griegas](https://manualdelatex.com/caracteres/letras-griegas).
+
+## Funciones trigonométricas
+Esta es la lista de las funciones trigonométricas.
+
+| Comando      | Impresión        |
+|--------------------|--------------------------|
+| `$\sin(x)$`       | $\sin(x)$                 |
+| `$\cos(x)$`       | $\cos(x)$                 |
+| `$\tan(x)$`       | $\tan(x)$                 |
+| `$\csc(x)$`       | $\csc(x)$                 |
+| `$\sec(x)$`       | $\sec(x)$                 |
+| `$\cot(x)$`       | $\cot(x)$                 |
+
+Notemos que al utilizar los parentesís es compatible con lo visto anteriormente para ellos.
+
+## Comandos para conjuntos
+Ya vimos anteriormente que podemos agregar llaves con los comandos `\{ \}`. Sin embargo, hay otros comandos necesarios para la teoría de conjuntos, aquí repasamos algunos.
+
+### Contenciones
+Para decir que un conjunto $A$ es subconjunto de un conjunto $B$ se utiliza el comando `\subset`.
+
+```latex
+\begin{equation*}
+A \subset B
+\end{equation*}
+```
+
+$$
+A\subset B
+$$
+
+También puede escribirse en sentido opuesto, esto es usando `\supset`.
+
+```latex
+\begin{equation*}
+B \supset A
+\end{equation*}
+```
+
+$$
+B \supset A
+$$
+
+### Uniones
+El comando para escribir la unión de un conjunto $A$ con un conjunto $B$ es con el comando `\cup`.
+
+```latex
+\begin{equation*}
+A \cup B
+\end{equation*}
+```
+$$
+A\cup B
+$$
+
+En caso de ser necesario unir una cantidad $n$ de conjuntos se hace ajustando el símbolo de unión por medio del comando `\bigcup` y para agregar límites es con los comandos de superíndice y subíndice.
+
+```latex
+\begin{equation*}
+\bigcup_{i=1}^{n} A_i
+\end{equation*}
+```
+$$
+\bigcup_{i=1}^{n} A_i
+$$
+
+### Intersecciones
+El comando para escribir la intersección de un conjunto $A$ con un conjunto $B$ es con el comando `\cap`.
+
+```latex
+\begin{equation*}
+A \cap B
+\end{equation*}
+```
+$$
+A\cap B
+$$
+
+En caso de ser necesario intersectar una cantidad $n$ de conjuntos se hace ajustando el símbolo de intersección por medio del comando `\bigcap` y para agregar límites es con los comandos de superíndice y subíndice.
+
+```latex
+\begin{equation*}
+\bigcap_{i=1}^{n} A_i
+\end{equation*}
+```
+$$
+\bigcap_{i=1}^{n} A_i
+$$
+
+### Pertenencia
+Para escribir que un elemento pertenece a un conjunto se utiliza el comando `\in`, si queremos denotar que el elemento no pertenece al conjunto es con el comando `\notin`.
+
+```latex
+\begin{equation*}
+x\in A
+\end{equation*}
+```
+$$
+x\in A
+$$
+
+```latex
+\begin{equation*}
+x\botin A
+\end{equation*}
+```
+$$
+x\notin A
+$$
+
+## Sumatorias y Productos
+### Sumatorias
+Cuando vamos a agregar una sumatoria lo hacemos con el comando `\sum`, en caso de querer agregar límites se hace con los comandos para subíndices y superíndices.
+
+```latex
+\begin{equation*}
+
+\sum_{i=1}^{n} a_i 
+\end{equation*}
+```
+$$
+\sum_{i=1}^{n} a_i
+$$
+
+### Productos
+Cuando agregamos un producto lo hacemos con el comando `\prod`, en caso de querer agregar límites se hace con los comandos para subíndices y superíndices.
+
+```latex
+\begin{equation*}
+\prod_{i=1}^{n} a_i
+\end{equation*}
+```
+$$
+\prod_{i=1}^{n} a_i
+$$
+
+Si solo vamos a multiplicar dos números podemos hacerlo por medio de los comandos `\times` o `\cdot`. 
+
+```latex
+\begin{equation*}
+a\times b =
+a\cdot b 
+\end{equation*}
+```
+$$
+a\times b    = a\cdot b
+$$
+
+## Límites
+Para poner un límite se utiliza el comando `\lim` y para agregar hacia donde tiende el límite es con los comandos de subíndice `\lim_{}`. Ejemplo:
+
+```latex
+\begin{equation*}
+\lim_{x\to 0} x^2-3=-3
+\end{equation*}
+```
+$$
+\lim_{x\to 0} x^2-3=-3
+$$
+
+## Derivadas
+Las derivadas no tienen un comando para escribirse, debemos usar comando que ya conocemos `\dfrac{d}{dx}`, pero, si lo que se necesita es una derivada parcial se utiliza `\dfrac{\partial}{\partial x}`.
+
+```latex
+Derivada
+\begin{equation*}
+\dfrac{d}{dx} x^2-5x = 2x - 5
+\end{equation*}
+
+Derivada Parcial
+\begin{equation*}
+\dfrac{\partial}{\partial x} 3x^4y^2-5xy = 12x^3y^2 - 5y
+\end{equation*}
+```
+
+Derivada
+$$
+\dfrac{d}{dx} x^2-5x = 2x - 5
+$$
+
+Derivada Parcial
+$$
+\dfrac{\partial}{\partial x} 3x^4y^2-5xy = 12x^3y^2 - 5y
+$$
+
+## Integrales
+Para escribir una integral se utiliza el comando `\int`, para agregar los límites de integración se utilizan los comandos de subíndices y superíndices.
+
+```latex
+\begin{equation*}
+\int_a^b f(x) dx = F(b) - F(a).
+\end{equation*}
+```
+$$
+\int_a^b f(x) dx = F(b) - F(a).
+$$
+
+## Displaystyle
+Un comando que es importante y muy usando es el `\displaystyle`. Este comando se utiliza al principio de una expresión matemática y hace que la impresión se vea más estética, con el mismo formato cuando utilizamos ecuaciones centradas.
+
+*Sin displaystyle*
+```latex
+\int_a^b f(x) dx
+```
+$\int_a^b f(x) dx$
+
+*Con displaystyle*
+```latex
+\displaystyle\int_a^b f(x) dx
+```
+$\displaystyle\int_a^b f(x) dx$
+
+## Otros tipos de letras
+También podemos llamar otras letras 
+
+| Comando | Impresión |
+|---------|-----------|
+| `\mathbb{R}` | $\mathbb{R}$ |
+| `\mathcal{A}}` | $\mathcal{A}$ |
+| `\mathscr{A}` | $\mathscr{A}$ |
+
+Para más tipos de letras [Manual de Latex - Tipos de letras](https://manualdelatex.com/tutoriales/tipo-de-letra).
+
+## Funciones por partes
+Una función por partes requiere el comando `\begin{array}`, sin embargo este comando necesita más información, esa información es la cantidad de columnas que tendrá el arreglo, eso se hace modificando el comando `\begin{array}{ccc}`, donde cada *c* representa una columna, en este caso habrían tres columnas, pero podríamos agregar las que sean necesarias. Por ejemplo:
+```latex
+\begin{equation*}
+    f(x) = \begin{array}{ccc}
+    x^2 & \text{ si } & x>0,\\
+    x & \text{ si } & x\geq 0
+    \end{array}
+\end{equation*}
+```
+$$
+f(x) = \begin{array}{ccc}
+    x^2 & \text{ si } & x>0,\\
+    x & \text{ si } & x\leq 0
+    \end{array}
+$$
+
+Hay varios puntos que destacar:
+
+* Para hacer uso de este comando es necesario estar dentro del entorno `\begin{equation}`.
+
+* Para dividir el contenido entre columnas se utiliza el símbolo `&`.
+
+* Para pasar de un renglón a otro se utiliza el salto de línea `\\`.
+
+Notemos aún nos hace falta agregar una llave después del igual, pero la llave se debe ajustar al tamaño de la función, esto se hace usando lo que se vio en la subsección de parentesís.
+
+```latex
+\begin{equation*}
+f(x) = \left\{
+    \begin{array}{ccc}
+        x^2 & \text{ si } & x>0,\\
+        x & \text{ si } & x\leq 0
+    \end{array}
+    \right.
+\end{equation*}
+```
+$$
+f(x) = \left\{
+    \begin{array}{ccc}
+        x^2 & \text{ si } & x>0,\\
+        x & \text{ si } & x\leq 0
+    \end{array}
+    \right.
+$$
+
+Notemos que como solo necesitamos la llave de apertura es necesario agregar el comando `\right.` para no causar conflictos en la escritura.
+
+## Matrices
+Con el mismo comando `\begin{array}` podemos escribir matrices con la cantidad de filas y columnas que necesitemos. Es importante que al inicio y final del comando escribamos unos parentesís con ajustes.
+
+```latex
+\left(
+    \begin{array}{ccc}
+        1 & 2 & 3 & 4 \\
+        1 & 2 & 3 & 4 \\
+        1 & 2 & 3 & 4 \\
+        1 & 2 & 3 & 4 \\
+    \end{array}
+    \right)
+```
+$$
+\left(
+    \begin{array}{ccc}
+        1 & 2 & 3 & 4 \\
+        1 & 2 & 3 & 4 \\
+        1 & 2 & 3 & 4 \\
+        1 & 2 & 3 & 4 \\
+    \end{array}
+    \right)
+$$
+
+## Crear comandos personalizados
+Una de las grandes ventajas que tenemos es que podemos adecuar los comandos a nuestra escritura y nuestra lógica, es decir, podemos crear comandos propios que nos sirven para agilizar nuestra redacción.
+Para lograr esto se hace uso del comando `\newcommand{"aquí va el nuevo comando"}{"aquí va la expresión"}`. Te pongo un ejemplo:
+
+Dentro de todas las letras griegas existe una muy utilizada que es el *epsilon* $\epsilon$, sin embargo, es común utilizar en su lugar la variación de `\varepsilon`
+$\varepsilon$, veamos que este comando es algo largo de escribir y seguramente durante un texto donde se requiera escribirlo mucho se vuelve cansado, por eso optamos por crear un comando nuevo, para este ejemplo este comando nuevo será el comando `\ve`, una contracción de la palabra completa. 
+Nuestro nuevo comando quedaría así:
+```latex
+\renewcommand{\ve}{\varepsilon}
+$\ve$
+```  
+$$
+\renewcommand{\ve}{\varepsilon}
+\ve
+$$
+
+Pero esta elección es arbitraria, podemos utilizar cualquier palabra para crear este comando. Otra forma de hacer esto es con el comando `\renewcommand{\ve}{\varepsilon}`, en este caso sustituye el comando `\ve` al `\varepsilon`.
+Otros ejemplos de usos:
+
+| Comando original | Comando nuevo | Impresión |
+|------------------|---------------|-----------|
+|`\displaystyle`   | `\ds` | $\displaystyle$ |
+|`\mathbb{R}` | `\R` | $\mathbb{R}$ |
+|`\sum_{i=1}^n` | `\sumin` | $\sum_{i=1}^n$ |
+|`\newline` | `\nl` | |
+|`\f:\R \to \R` | `\frr` | $f:\mathbb{R} \to \mathbb{R}$ |  
+
+La última variante del comando `\newcommand` es el siguiente:
+
+Como ya se vio, podemos ajustar parentesís, corchetes o llaves al tamaño que necesite la ecuación. Pero, podemos hacer uso del comando `\newcommand` para evitar escribir `\left` y `\right` cada que se requiera.
+Por ejemplo, para los parentesís:
+```latex
+\newcommand{\parentesis}[1]{\left(#1\right)}
+```
+
+`\parentesis`: Es el comando nuevo
+
+`[1]`: es para indicar el argumento, es decir, se acepta un argumento.
+
+`\left(#1\right)`: Es para encerrar entre parentesís al argumento.
+
+Y la forma de utilizarse sería:
+
+```latex
+\begin{equation*}
+    \parentesis{\dfrac{x^2-4x+1}{x^3+9}}
+\end{equation*}
+```
+$$
+\newcommand{\parentesis}[1]{\left(#1\right)}
+\parentesis{\dfrac{x^2-4x+1}{x^3+9}}
+$$

@@ -1,24 +1,41 @@
 # Paqueterías
 
-- imakeidx
-- inputenc
-- fontenc
-- amsmath
-- amsfonts
-- mathtools
-- amssymb
-- amsthm
-- hyperref
-- comment
-- graphicx
-- geometry
-- array
-- stackrel
-- babel
+- **`imakeidx`**: Sirve para crear índices de forma sencilla y personalizable en documentos LaTeX.
+- **`inputenc`**: Permite especificar la codificación de los caracteres de entrada, por ejemplo, `utf8` para interpretar acentos y caracteres especiales.
+- **`fontenc`**: Maneja la codificación de los caracteres en la salida, asegurando que los caracteres especiales (como ñ o tildes) se impriman correctamente.
+- **`amsmath`**: Proporciona herramientas avanzadas para escribir fórmulas matemáticas de manera estructurada y profesional.
+- **`amsfonts`**: Incluye un conjunto adicional de fuentes matemáticas diseñadas por la American Mathematical Society (AMS).
+- **`mathtools`**: Extiende las funcionalidades de `amsmath` con comandos y herramientas adicionales para matemáticas.
+- **`amssymb`**: Proporciona símbolos matemáticos adicionales que no están disponibles en el paquete básico de LaTeX.
+- **`amsthm`**: Facilita la creación de entornos para teoremas, definiciones, lemas y otros resultados matemáticos.
+- **`hyperref`**: Añade hipervínculos al documento, permitiendo navegar entre secciones, referencias o enlaces externos.
+- **`comment`**: Permite comentar grandes bloques de texto en el documento sin eliminarlos, útil para notas o versiones alternativas.
+- **`graphicx`**: Proporciona herramientas para incluir gráficos e imágenes en documentos LaTeX, con opciones de escalado, rotación, etc.
+- **`geometry`**: Permite personalizar el diseño de la página, como márgenes, tamaño de página y orientación.
+- **`array`**: Ofrece funcionalidades avanzadas para trabajar con tablas, como la personalización de columnas.
+- **`stackrel`**: Define el comando `\stackrel`, que permite escribir texto o símbolos encima de otros en fórmulas matemáticas.
+- **`babel`**: Maneja la adaptación del idioma del documento, como la división silábica y traducción de textos automáticos (p. ej., "Índice") con la opción `[spanish]` para español.
+
 
 Las paqueterías las agregaremos a nuestro documento posterior al comando `\documentclass{article}` que parece en la primer línea haciendo uso del comando `\usepackage{*nombre del paquete*}`[^1]. Ejemplo de uso
 
 [^1]: Para todos los comandos se agrega `\` al principio.
 
-`\documentclass{article}`  
-`\usepackage{amsmath}`
+```latex
+\documentclass{article}
+\usepackage{imakeidx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{comment}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{stackrel}
+\usepackage[spanish]{babel}
+```

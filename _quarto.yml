@@ -9,6 +9,7 @@ book:
     - index.qmd
     - paqueterias.qmd
     - primerdoc.qmd
+    - comandos.qmd
     - references.qmd
 
 bibliography: references.bib

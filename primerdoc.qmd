@@ -106,5 +106,219 @@ Salida:
       3.3.1 **Diferenciales**
 
 
-
 Si queremos que no se enumeren es necesario modificar los comandos y utilizar `\section*{},\subsection*{},\subsubsection*{}`.
+
+## Comentarios y saltos de línea
+
+Una herramienta útil al momento de construir nuestro documento son agregar los comentarios, estas líneas en el código no se compilan y por tanto no aparecen impresas en el documento. Para agregar un comentario es por medio del símbolo `%`.
+Aquí un ejemplo del uso
+```latex
+\documentclass{article}
+% Paquetería
+\usepackage{imakeidx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{comment}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{stackrel}
+\usepackage[spanish]{babel}
+```
+
+Otra función necesaria en la redacción de un texto son los saltos de línea, esto lo podemos hacer de varias formas:
+
+- Doble enter:
+```latex
+El hecho ocurrió en el mes de febrero de 1969, al norte de Boston, en Cambridge. No lo 
+escribí inmediatamente porque mi primer propósito fue olvidarlo, para no perder la 
+razón. Ahora, en 1972, pienso que si lo escribo, los otros lo leerán como un cuento y, 
+con los años, lo será tal vez para mí.
+
+Sé que fue casi atroz mientras duró y más aún durante las desveladas noches que lo 
+siguieron. Ello no significa que su relato pueda conmover a un tercero. 
+```
+- Utilizar `\\`:
+```latex
+El hecho ocurrió en el mes de febrero de 1969, al norte de Boston, en Cambridge. No lo 
+escribí inmediatamente porque mi primer propósito fue olvidarlo, para no perder la 
+razón. Ahora, en 1972, pienso que si lo escribo, los otros lo leerán como un cuento y, 
+con los años, lo será tal vez para mí. \\
+Sé que fue casi atroz mientras duró y más aún durante las desveladas noches que lo 
+siguieron. Ello no significa que su relato pueda conmover a un tercero. 
+```
+- Comando `\newline`:
+```latex
+El hecho ocurrió en el mes de febrero de 1969, al norte de Boston, en Cambridge. No lo 
+escribí inmediatamente porque mi primer propósito fue olvidarlo, para no perder la 
+razón. Ahora, en 1972, pienso que si lo escribo, los otros lo leerán como un cuento y, 
+con los años, lo será tal vez para mí. \newline
+Sé que fue casi atroz mientras duró y más aún durante las desveladas noches que lo 
+siguieron. Ello no significa que su relato pueda conmover a un tercero. 
+```
+Además, si queremos agregar espacios en blanco, ya sean horizontales o vérticales podemos hacer uso de los comandos `\hspace{}` y `\vspace{}`.
+
+## Ecuaciones
+La gran ventaja de utilizar Latex (Overleaf) sobre otros procesadores de texto son las ventajas que nos da al momento de escribir ecuaciones.
+
+### Ecuaciones en texto
+Lo primero que necesitamos es darle formato de ecuación a una expresión que se encuentra dentro de un texto. Por ejemplo, supongamos que tenemos la línea de texto siguiente:
+
+"La variable x es la variable independiente y y es la variable dependiente".
+
+Aquí se presenta un problema, pues el conectivo "y" se confunde con la variable "y". Para hacer esta distinción utilizamos el formato de ecuación, esto se hace encerrando entre símbolos `$$` a la ecuación. 
+
+```latex
+La variable $x$ es la variable independiente y $y$ es la variable dependiente.
+```
+La salida nos quedaría tal que así:
+
+La variable $x$ es la variable independiente y $y$ es la variable dependiente.
+
+### Ecuaciones centradas
+
+Por otro lado, hay ocaciones que lo que necesitamos es una ecuación completa y que esta ecuación se encuentre centrada. Esto se puede lograr de varias formas, sin embago, la más útil y para seguir un formato similar a lo largo de este documento se hará uso del comando `\begin{equation}`[^2]. Un ejemplo con su respectiva salida sería:
+
+[^2]: Al momento de escribir cualquier comando que comience por `\begin{}` automáticamente el programa nos da el comando `\end{}`, en caso de no aparecer habrá que añardirse.
+
+```latex
+\begin{equation}
+f(x) = 3x^5-x^4+8x^2-x+1.
+\end{equation}
+```
+$$
+\begin{aligned}
+f(x) &= 3x^5-x^4+8x^2-x+1. \hspace{1cm} (1)
+\end{aligned}
+$$
+
+Observemos que la ecuación se imprime numerada, en este caso con el (1), esa numeración depende de nuestro documento y de las ecuaciones que hayamos puesto anteriormente. Si deseamos quitar la numeración utilizamos el comando `\begin{equation*}`.
+
+```latex
+\begin{equation*}
+f(x) = 3x^5-x^4+8x^2-x+1.
+\end{equation*}
+```
+$$
+f(x) = 3x^5-x^4+8x^2-x+1.
+$$
+
+### Multiecuaciones
+
+Ahora, si lo que se necesita es escribir varias ecuaciones centradas de forma continua sin utilizar el comando `\begin{equation}` varias veces, es mejor utilizar el comando `\begin{gather}` o en su defecto `\begin{gather*}` si es que no queremos numerarlas. Aquí un ejemplo:
+
+```latex
+\begin{gather*}
+f(x) = 1+x^2, \\
+g(x) = x^3-2x+2, \\
+h(x) = 8x-3.
+\end{gather*}
+```
+$$
+f(x) = 1+x^2,
+$$
+
+$$
+g(x) = x^3-2x+2,
+$$
+
+$$
+h(x) = 8x-3.
+$$
+
+
+### Ecuaciones alineadas
+
+En cambio, si lo que buscamos es que las ecuaciones queden alineadas tomando de referencia algún símbolo, utilizamos el comando `\begin{align}` o `\begin{align*}` para que no se enumeren. Es importante añadir el símbolo `&` para fijar el símbolo deseado.
+
+```latex
+\begin{align*}
+f(x) &= 1+x^2, \\
+g(x) &= x^3-2x+2, \\
+h(x) &= 8x-3.
+\end{align*}
+```
+$$
+\begin{aligned}
+f(x) &= 1+x^2, \\
+g(x) &= x^3-2x+2, \\
+h(x) &= 8x-3.
+\end{aligned}
+$$
+
+### Texto dentro de ecuaciones
+
+Si lo que se necesita es agregar algún texto dentro de una ecuación y que este texto no aparezca en formato de ecuación, se pueden utilizar dos comando `\text{}` y `\textup{}`.
+
+```latex
+ x^2-1>0 \text{ si } x>1.
+```
+$$
+x^2-1>0\text{ si } x>1.
+$$
+
+[^3]
+
+[^3]: Es importante agregar espacios antes y después del texto para una mejor impresión.
+
+## Listas
+
+Otra herramiento necesaria en algunos documentos es la creación de listas, estas listas pueden o no estar numeradas, veamos como escribir cada una.
+
+### Listas no numeradas
+
+Para escribir una lista no numerada el comando a usar es el `\begin{itemize}`.
+
+```latex
+Lista de conceptos básicos de cálculo I:
+\begin{itemize}
+    \item Función
+    \item Límite
+    \item Continuidad
+    \item Pendiente
+    \item Derivada
+\end{itemize}
+```
+
+Lista de conceptos básicos de cálculo I:
+
+* Función
+* Límite
+* Continuidad
+* Pendiente
+* Derivada
+
+### Listas numeradas
+
+Por su parte para las listas numeradas se utiliza el comando `\begin{enumerate}`.
+
+```latex
+Lista de conceptos básicos de cálculo I:
+\begin{enumerate}
+    \item Función
+    \item Límite
+    \item Continuidad
+    \item Pendiente
+    \item Derivada
+\end{enumerate}
+```
+
+Lista de conceptos básicos de cálculo I:
+
+1. Función
+
+2. Límite
+
+3. Continuidad
+
+4. Pendiente
+
+5. Derivada
+
+

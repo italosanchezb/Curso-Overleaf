@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -126,6 +160,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./comandos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Comandos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
@@ -161,25 +201,39 @@ ul.task-list li input[type="checkbox"] {
 
 
 <ul>
-<li>imakeidx</li>
-<li>inputenc</li>
-<li>fontenc</li>
-<li>amsmath</li>
-<li>amsfonts</li>
-<li>mathtools</li>
-<li>amssymb</li>
-<li>amsthm</li>
-<li>hyperref</li>
-<li>comment</li>
-<li>graphicx</li>
-<li>geometry</li>
-<li>array</li>
-<li>stackrel</li>
-<li>babel</li>
+<li><strong><code>imakeidx</code></strong>: Sirve para crear índices de forma sencilla y personalizable en documentos LaTeX.</li>
+<li><strong><code>inputenc</code></strong>: Permite especificar la codificación de los caracteres de entrada, por ejemplo, <code>utf8</code> para interpretar acentos y caracteres especiales.</li>
+<li><strong><code>fontenc</code></strong>: Maneja la codificación de los caracteres en la salida, asegurando que los caracteres especiales (como ñ o tildes) se impriman correctamente.</li>
+<li><strong><code>amsmath</code></strong>: Proporciona herramientas avanzadas para escribir fórmulas matemáticas de manera estructurada y profesional.</li>
+<li><strong><code>amsfonts</code></strong>: Incluye un conjunto adicional de fuentes matemáticas diseñadas por la American Mathematical Society (AMS).</li>
+<li><strong><code>mathtools</code></strong>: Extiende las funcionalidades de <code>amsmath</code> con comandos y herramientas adicionales para matemáticas.</li>
+<li><strong><code>amssymb</code></strong>: Proporciona símbolos matemáticos adicionales que no están disponibles en el paquete básico de LaTeX.</li>
+<li><strong><code>amsthm</code></strong>: Facilita la creación de entornos para teoremas, definiciones, lemas y otros resultados matemáticos.</li>
+<li><strong><code>hyperref</code></strong>: Añade hipervínculos al documento, permitiendo navegar entre secciones, referencias o enlaces externos.</li>
+<li><strong><code>comment</code></strong>: Permite comentar grandes bloques de texto en el documento sin eliminarlos, útil para notas o versiones alternativas.</li>
+<li><strong><code>graphicx</code></strong>: Proporciona herramientas para incluir gráficos e imágenes en documentos LaTeX, con opciones de escalado, rotación, etc.</li>
+<li><strong><code>geometry</code></strong>: Permite personalizar el diseño de la página, como márgenes, tamaño de página y orientación.</li>
+<li><strong><code>array</code></strong>: Ofrece funcionalidades avanzadas para trabajar con tablas, como la personalización de columnas.</li>
+<li><strong><code>stackrel</code></strong>: Define el comando <code>\stackrel</code>, que permite escribir texto o símbolos encima de otros en fórmulas matemáticas.</li>
+<li><strong><code>babel</code></strong>: Maneja la adaptación del idioma del documento, como la división silábica y traducción de textos automáticos (p.&nbsp;ej., “Índice”) con la opción <code>[spanish]</code> para español.</li>
 </ul>
 <p>Las paqueterías las agregaremos a nuestro documento posterior al comando <code>\documentclass{article}</code> que parece en la primer línea haciendo uso del comando <code>\usepackage{*nombre del paquete*}</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Ejemplo de uso</p>
-<p><code>\documentclass{article}</code><br>
-<code>\usepackage{amsmath}</code></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\documentclass</span>{<span class="ex">article</span>}</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">imakeidx</span>}</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[utf8]{<span class="ex">inputenc</span>}</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[T1]{<span class="ex">fontenc</span>}</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amsmath</span>}</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amsfonts</span>}</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">mathtools</span>}</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amssymb</span>}</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">amsthm</span>}</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">hyperref</span>}</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">comment</span>}</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">graphicx</span>}</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">geometry</span>}</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">array</span>}</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">stackrel</span>}</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[spanish]{<span class="ex">babel</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
