@@ -184,7 +184,87 @@
     "href": "comandos.html#sumatorias-y-productos",
     "title": "3  Comandos",
     "section": "3.9 Sumatorias y Productos",
-    "text": "3.9 Sumatorias y Productos\n\n3.9.1 Sumatorias\nCuando vamos a agregar una sumatoria lo hacemos con el comando \\sum, en caso de querer agregar límites se hace con los comandos para subíndices y superíndices.\n\\begin{equation*}\n\n\\sum_{i=1}^{n} a_i \n\\end{equation*}\n\\[\n\\sum_{i=1}^{n} a_i\n\\]\n\n\n3.9.2 Productos\nCuando agregamos un producto lo hacemos con el comando \\prod, en caso de querer agregar límites se hace con los comandos para subíndices y superíndices.\n\\begin{equation*}\n\\prod_{i=1}^{n} a_i\n\\end{equation*}\n\\[\n\\prod_{i=1}^{n} a_i\n\\]\nSi solo vamos a multiplicar dos números podemos hacerlo por medio de los comandos \\times o \\cdot.\n\\begin{equation*}\na\\times b =\na\\cdot b \n\\end{equation*}\n\\[\na\\times b = a\\cdot b\n\\]",
+    "text": "3.9 Sumatorias y Productos\n\n3.9.1 Sumatorias\nCuando vamos a agregar una sumatoria lo hacemos con el comando \\sum, en caso de querer agregar límites se hace con los comandos para subíndices y superíndices.\n\\begin{equation*}\n\n\\sum_{i=1}^{n} a_i \n\\end{equation*}\n\\[\n\\sum_{i=1}^{n} a_i\n\\]\n\n\n3.9.2 Productos\nCuando agregamos un producto lo hacemos con el comando \\prod, en caso de querer agregar límites se hace con los comandos para subíndices y superíndices.\n\\begin{equation*}\n\\prod_{i=1}^{n} a_i\n\\end{equation*}\n\\[\n\\prod_{i=1}^{n} a_i\n\\]\nSi solo vamos a multiplicar dos números podemos hacerlo por medio de los comandos \\times o \\cdot.\n\\begin{equation*}\na\\times b =\na\\cdot b \n\\end{equation*}\n\\[\na\\times b    = a\\cdot b\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Comandos</span>"
+    ]
+  },
+  {
+    "objectID": "comandos.html#límites",
+    "href": "comandos.html#límites",
+    "title": "3  Comandos",
+    "section": "3.10 Límites",
+    "text": "3.10 Límites\nPara poner un límite se utiliza el comando \\lim y para agregar hacia donde tiende el límite es con los comandos de subíndice \\lim_{}. Ejemplo:\n\\begin{equation*}\n\\lim_{x\\to 0} x^2-3=-3\n\\end{equation*}\n\\[\n\\lim_{x\\to 0} x^2-3=-3\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Comandos</span>"
+    ]
+  },
+  {
+    "objectID": "comandos.html#derivadas",
+    "href": "comandos.html#derivadas",
+    "title": "3  Comandos",
+    "section": "3.11 Derivadas",
+    "text": "3.11 Derivadas\nLas derivadas no tienen un comando para escribirse, debemos usar comando que ya conocemos \\dfrac{d}{dx}, pero, si lo que se necesita es una derivada parcial se utiliza \\dfrac{\\partial}{\\partial x}.\nDerivada\n\\begin{equation*}\n\\dfrac{d}{dx} x^2-5x = 2x - 5\n\\end{equation*}\n\nDerivada Parcial\n\\begin{equation*}\n\\dfrac{\\partial}{\\partial x} 3x^4y^2-5xy = 12x^3y^2 - 5y\n\\end{equation*}\nDerivada \\[\n\\dfrac{d}{dx} x^2-5x = 2x - 5\n\\]\nDerivada Parcial \\[\n\\dfrac{\\partial}{\\partial x} 3x^4y^2-5xy = 12x^3y^2 - 5y\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Comandos</span>"
+    ]
+  },
+  {
+    "objectID": "comandos.html#integrales",
+    "href": "comandos.html#integrales",
+    "title": "3  Comandos",
+    "section": "3.12 Integrales",
+    "text": "3.12 Integrales\nPara escribir una integral se utiliza el comando \\int, para agregar los límites de integración se utilizan los comandos de subíndices y superíndices.\n\\begin{equation*}\n\\int_a^b f(x) dx = F(b) - F(a).\n\\end{equation*}\n\\[\n\\int_a^b f(x) dx = F(b) - F(a).\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Comandos</span>"
+    ]
+  },
+  {
+    "objectID": "comandos.html#displaystyle",
+    "href": "comandos.html#displaystyle",
+    "title": "3  Comandos",
+    "section": "3.13 Displaystyle",
+    "text": "3.13 Displaystyle\nUn comando que es importante y muy usando es el \\displaystyle. Este comando se utiliza al principio de una expresión matemática y hace que la impresión se vea más estética, con el mismo formato cuando utilizamos ecuaciones centradas.\nSin displaystyle\n\\int_a^b f(x) dx\n\\(\\int_a^b f(x) dx\\)\nCon displaystyle\n\\displaystyle\\int_a^b f(x) dx\n\\(\\displaystyle\\int_a^b f(x) dx\\)",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Comandos</span>"
+    ]
+  },
+  {
+    "objectID": "comandos.html#otros-tipos-de-letras",
+    "href": "comandos.html#otros-tipos-de-letras",
+    "title": "3  Comandos",
+    "section": "3.14 Otros tipos de letras",
+    "text": "3.14 Otros tipos de letras\nTambién podemos llamar otras letras\n\n\n\nComando\nImpresión\n\n\n\n\n\\mathbb{R}\n\\(\\mathbb{R}\\)\n\n\n\\mathcal{A}}\n\\(\\mathcal{A}\\)\n\n\n\\mathscr{A}\n\\(\\mathscr{A}\\)\n\n\n\nPara más tipos de letras Manual de Latex - Tipos de letras.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Comandos</span>"
+    ]
+  },
+  {
+    "objectID": "comandos.html#funciones-por-partes",
+    "href": "comandos.html#funciones-por-partes",
+    "title": "3  Comandos",
+    "section": "3.15 Funciones por partes",
+    "text": "3.15 Funciones por partes\nUna función por partes requiere el comando \\begin{array}, sin embargo este comando necesita más información, esa información es la cantidad de columnas que tendrá el arreglo, eso se hace modificando el comando \\begin{array}{ccc}, donde cada c representa una columna, en este caso habrían tres columnas, pero podríamos agregar las que sean necesarias. Por ejemplo:\n\\begin{equation*}\n    f(x) = \\begin{array}{ccc}\n    x^2 & \\text{ si } & x&gt;0,\\\\\n    x & \\text{ si } & x\\geq 0\n    \\end{array}\n\\end{equation*}\n\\[\nf(x) = \\begin{array}{ccc}\n    x^2 & \\text{ si } & x&gt;0,\\\\\n    x & \\text{ si } & x\\leq 0\n    \\end{array}\n\\]\nHay varios puntos que destacar:\n\nPara hacer uso de este comando es necesario estar dentro del entorno \\begin{equation}.\nPara dividir el contenido entre columnas se utiliza el símbolo &.\nPara pasar de un renglón a otro se utiliza el salto de línea \\\\.\n\nNotemos aún nos hace falta agregar una llave después del igual, pero la llave se debe ajustar al tamaño de la función, esto se hace usando lo que se vio en la subsección de parentesís.\n\\begin{equation*}\nf(x) = \\left\\{\n    \\begin{array}{ccc}\n        x^2 & \\text{ si } & x&gt;0,\\\\\n        x & \\text{ si } & x\\leq 0\n    \\end{array}\n    \\right.\n\\end{equation*}\n\\[\nf(x) = \\left\\{\n    \\begin{array}{ccc}\n        x^2 & \\text{ si } & x&gt;0,\\\\\n        x & \\text{ si } & x\\leq 0\n    \\end{array}\n    \\right.\n\\]\nNotemos que como solo necesitamos la llave de apertura es necesario agregar el comando \\right. para no causar conflictos en la escritura.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Comandos</span>"
+    ]
+  },
+  {
+    "objectID": "comandos.html#matrices",
+    "href": "comandos.html#matrices",
+    "title": "3  Comandos",
+    "section": "3.16 Matrices",
+    "text": "3.16 Matrices\nCon el mismo comando \\begin{array} podemos escribir matrices con la cantidad de filas y columnas que necesitemos. Es importante que al inicio y final del comando escribamos unos parentesís con ajustes.\n\\left(\n    \\begin{array}{ccc}\n        1 & 2 & 3 & 4 \\\\\n        1 & 2 & 3 & 4 \\\\\n        1 & 2 & 3 & 4 \\\\\n        1 & 2 & 3 & 4 \\\\\n    \\end{array}\n    \\right)\n\\[\n\\left(\n    \\begin{array}{cccc}\n        1 & 2 & 3 & 4 \\\\\n        1 & 2 & 3 & 4 \\\\\n        1 & 2 & 3 & 4 \\\\\n        1 & 2 & 3 & 4 \\\\\n    \\end{array}\n    \\right)\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Comandos</span>"
+    ]
+  },
+  {
+    "objectID": "comandos.html#crear-comandos-personalizados",
+    "href": "comandos.html#crear-comandos-personalizados",
+    "title": "3  Comandos",
+    "section": "3.17 Crear comandos personalizados",
+    "text": "3.17 Crear comandos personalizados\nUna de las grandes ventajas que tenemos es que podemos adecuar los comandos a nuestra escritura y nuestra lógica, es decir, podemos crear comandos propios que nos sirven para agilizar nuestra redacción. Para lograr esto se hace uso del comando \\newcommand{\"aquí va el nuevo comando\"}{\"aquí va la expresión\"}. Te pongo un ejemplo:\nDentro de todas las letras griegas existe una muy utilizada que es el epsilon \\(\\epsilon\\), sin embargo, es común utilizar en su lugar la variación de \\varepsilon \\(\\varepsilon\\), veamos que este comando es algo largo de escribir y seguramente durante un texto donde se requiera escribirlo mucho se vuelve cansado, por eso optamos por crear un comando nuevo, para este ejemplo este comando nuevo será el comando \\ve, una contracción de la palabra completa. Nuestro nuevo comando quedaría así:\n\\renewcommand{\\ve}{\\varepsilon}\n$\\ve$\n\\[\n\\varepsilon\n\\]\nPero esta elección es arbitraria, podemos utilizar cualquier palabra para crear este comando. Otra forma de hacer esto es con el comando \\renewcommand{\\ve}{\\varepsilon}, en este caso sustituye el comando \\ve al \\varepsilon. Otros ejemplos de usos:\n\n\n\nComando original\nComando nuevo\nImpresión\n\n\n\n\n\\displaystyle\n\\ds\n\\(\\displaystyle\\)\n\n\n\\mathbb{R}\n\\R\n\\(\\mathbb{R}\\)\n\n\n\\sum_{i=1}^n\n\\sumin\n\\(\\sum_{i=1}^n\\)\n\n\n\\newline\n\\nl\n\n\n\n\\f:\\R \\to \\R\n\\frr\n\\(f:\\mathbb{R} \\to \\mathbb{R}\\)\n\n\n\nLa última variante del comando \\newcommand es el siguiente:\nComo ya se vio, podemos ajustar parentesís, corchetes o llaves al tamaño que necesite la ecuación. Pero, podemos hacer uso del comando \\newcommand para evitar escribir \\left y \\right cada que se requiera. Por ejemplo, para los parentesís:\n\\newcommand{\\parentesis}[1]{\\left(#1\\right)}\n\\parentesis: Es el comando nuevo\n[1]: es para indicar el argumento, es decir, se acepta un argumento.\n\\left(#1\\right): Es para encerrar entre parentesís al argumento.\nY la forma de utilizarse sería:\n\\begin{equation*}\n    \\parentesis{\\dfrac{x^2-4x+1}{x^3+9}}\n\\end{equation*}\n\\[\n\\newcommand{\\parentesis}[1]{\\left(#1\\right)}\n\\parentesis{\\dfrac{x^2-4x+1}{x^3+9}}\n\\]",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Comandos</span>"
     ]

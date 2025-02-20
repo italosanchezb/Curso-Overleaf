@@ -232,6 +232,14 @@ window.Quarto = {
   <li><a href="#sumatorias" id="toc-sumatorias" class="nav-link" data-scroll-target="#sumatorias"><span class="header-section-number">3.9.1</span> Sumatorias</a></li>
   <li><a href="#productos" id="toc-productos" class="nav-link" data-scroll-target="#productos"><span class="header-section-number">3.9.2</span> Productos</a></li>
   </ul></li>
+  <li><a href="#límites" id="toc-límites" class="nav-link" data-scroll-target="#límites"><span class="header-section-number">3.10</span> Límites</a></li>
+  <li><a href="#derivadas" id="toc-derivadas" class="nav-link" data-scroll-target="#derivadas"><span class="header-section-number">3.11</span> Derivadas</a></li>
+  <li><a href="#integrales" id="toc-integrales" class="nav-link" data-scroll-target="#integrales"><span class="header-section-number">3.12</span> Integrales</a></li>
+  <li><a href="#displaystyle" id="toc-displaystyle" class="nav-link" data-scroll-target="#displaystyle"><span class="header-section-number">3.13</span> Displaystyle</a></li>
+  <li><a href="#otros-tipos-de-letras" id="toc-otros-tipos-de-letras" class="nav-link" data-scroll-target="#otros-tipos-de-letras"><span class="header-section-number">3.14</span> Otros tipos de letras</a></li>
+  <li><a href="#funciones-por-partes" id="toc-funciones-por-partes" class="nav-link" data-scroll-target="#funciones-por-partes"><span class="header-section-number">3.15</span> Funciones por partes</a></li>
+  <li><a href="#matrices" id="toc-matrices" class="nav-link" data-scroll-target="#matrices"><span class="header-section-number">3.16</span> Matrices</a></li>
+  <li><a href="#crear-comandos-personalizados" id="toc-crear-comandos-personalizados" class="nav-link" data-scroll-target="#crear-comandos-personalizados"><span class="header-section-number">3.17</span> Crear comandos personalizados</a></li>
   </ul>
 </nav>
     </div>
@@ -664,11 +672,210 @@ x\notin A
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="ss">a</span><span class="sc">\cdot</span><span class="ss"> b </span></span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">equation*</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><span class="math display">\[
-a\times b = a\cdot b
+a\times b    = a\cdot b
+\]</span></p>
+</section>
+</section>
+<section id="límites" class="level2" data-number="3.10">
+<h2 data-number="3.10" class="anchored" data-anchor-id="límites"><span class="header-section-number">3.10</span> Límites</h2>
+<p>Para poner un límite se utiliza el comando <code>\lim</code> y para agregar hacia donde tiende el límite es con los comandos de subíndice <code>\lim_{}</code>. Ejemplo:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">equation*</span>}</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="sc">\lim</span><span class="ss">_{x</span><span class="sc">\to</span><span class="ss"> 0} x^2-3=-3</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">equation*</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math display">\[
+\lim_{x\to 0} x^2-3=-3
+\]</span></p>
+</section>
+<section id="derivadas" class="level2" data-number="3.11">
+<h2 data-number="3.11" class="anchored" data-anchor-id="derivadas"><span class="header-section-number">3.11</span> Derivadas</h2>
+<p>Las derivadas no tienen un comando para escribirse, debemos usar comando que ya conocemos <code>\dfrac{d}{dx}</code>, pero, si lo que se necesita es una derivada parcial se utiliza <code>\dfrac{\partial}{\partial x}</code>.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>Derivada</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">equation*</span>}</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="sc">\dfrac</span><span class="ss">{d}{dx} x^2-5x = 2x - 5</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">equation*</span>}</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>Derivada Parcial</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">equation*</span>}</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="sc">\dfrac</span><span class="ss">{</span><span class="sc">\partial</span><span class="ss">}{</span><span class="sc">\partial</span><span class="ss"> x} 3x^4y^2-5xy = 12x^3y^2 - 5y</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">equation*</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Derivada <span class="math display">\[
+\dfrac{d}{dx} x^2-5x = 2x - 5
+\]</span></p>
+<p>Derivada Parcial <span class="math display">\[
+\dfrac{\partial}{\partial x} 3x^4y^2-5xy = 12x^3y^2 - 5y
+\]</span></p>
+</section>
+<section id="integrales" class="level2" data-number="3.12">
+<h2 data-number="3.12" class="anchored" data-anchor-id="integrales"><span class="header-section-number">3.12</span> Integrales</h2>
+<p>Para escribir una integral se utiliza el comando <code>\int</code>, para agregar los límites de integración se utilizan los comandos de subíndices y superíndices.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">equation*</span>}</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="sc">\int</span><span class="ss">_a^b f(x) dx = F(b) - F(a).</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">equation*</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math display">\[
+\int_a^b f(x) dx = F(b) - F(a).
+\]</span></p>
+</section>
+<section id="displaystyle" class="level2" data-number="3.13">
+<h2 data-number="3.13" class="anchored" data-anchor-id="displaystyle"><span class="header-section-number">3.13</span> Displaystyle</h2>
+<p>Un comando que es importante y muy usando es el <code>\displaystyle</code>. Este comando se utiliza al principio de una expresión matemática y hace que la impresión se vea más estética, con el mismo formato cuando utilizamos ecuaciones centradas.</p>
+<p><em>Sin displaystyle</em></p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\int</span>_a^b f(x) dx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math inline">\(\int_a^b f(x) dx\)</span></p>
+<p><em>Con displaystyle</em></p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\displaystyle\int</span>_a^b f(x) dx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math inline">\(\displaystyle\int_a^b f(x) dx\)</span></p>
+</section>
+<section id="otros-tipos-de-letras" class="level2" data-number="3.14">
+<h2 data-number="3.14" class="anchored" data-anchor-id="otros-tipos-de-letras"><span class="header-section-number">3.14</span> Otros tipos de letras</h2>
+<p>También podemos llamar otras letras</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Comando</th>
+<th>Impresión</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>\mathbb{R}</code></td>
+<td><span class="math inline">\(\mathbb{R}\)</span></td>
+</tr>
+<tr class="even">
+<td><code>\mathcal{A}}</code></td>
+<td><span class="math inline">\(\mathcal{A}\)</span></td>
+</tr>
+<tr class="odd">
+<td><code>\mathscr{A}</code></td>
+<td><span class="math inline">\(\mathscr{A}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Para más tipos de letras <a href="https://manualdelatex.com/tutoriales/tipo-de-letra">Manual de Latex - Tipos de letras</a>.</p>
+</section>
+<section id="funciones-por-partes" class="level2" data-number="3.15">
+<h2 data-number="3.15" class="anchored" data-anchor-id="funciones-por-partes"><span class="header-section-number">3.15</span> Funciones por partes</h2>
+<p>Una función por partes requiere el comando <code>\begin{array}</code>, sin embargo este comando necesita más información, esa información es la cantidad de columnas que tendrá el arreglo, eso se hace modificando el comando <code>\begin{array}{ccc}</code>, donde cada <em>c</em> representa una columna, en este caso habrían tres columnas, pero podríamos agregar las que sean necesarias. Por ejemplo:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">equation*</span>}</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="ss">    f(x) = </span><span class="kw">\begin</span>{<span class="ex">array</span>}<span class="ss">{ccc}</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="ss">    x^2 &amp; </span><span class="sc">\text</span>{ si }<span class="ss"> &amp; x&gt;0,</span><span class="sc">\\</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="ss">    x &amp; </span><span class="sc">\text</span>{ si }<span class="ss"> &amp; x</span><span class="sc">\geq</span><span class="ss"> 0</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="ss">    </span><span class="kw">\end</span>{<span class="ex">array</span>}</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">equation*</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math display">\[
+f(x) = \begin{array}{ccc}
+    x^2 &amp; \text{ si } &amp; x&gt;0,\\
+    x &amp; \text{ si } &amp; x\leq 0
+    \end{array}
+\]</span></p>
+<p>Hay varios puntos que destacar:</p>
+<ul>
+<li><p>Para hacer uso de este comando es necesario estar dentro del entorno <code>\begin{equation}</code>.</p></li>
+<li><p>Para dividir el contenido entre columnas se utiliza el símbolo <code>&amp;</code>.</p></li>
+<li><p>Para pasar de un renglón a otro se utiliza el salto de línea <code>\\</code>.</p></li>
+</ul>
+<p>Notemos aún nos hace falta agregar una llave después del igual, pero la llave se debe ajustar al tamaño de la función, esto se hace usando lo que se vio en la subsección de parentesís.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">equation*</span>}</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="ss">f(x) = </span><span class="sc">\left\{</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="ss">    </span><span class="kw">\begin</span>{<span class="ex">array</span>}<span class="ss">{ccc}</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="ss">        x^2 &amp; </span><span class="sc">\text</span>{ si }<span class="ss"> &amp; x&gt;0,</span><span class="sc">\\</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="ss">        x &amp; </span><span class="sc">\text</span>{ si }<span class="ss"> &amp; x</span><span class="sc">\leq</span><span class="ss"> 0</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="ss">    </span><span class="kw">\end</span>{<span class="ex">array</span>}</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="ss">    </span><span class="sc">\right</span><span class="ss">.</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">equation*</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math display">\[
+f(x) = \left\{
+    \begin{array}{ccc}
+        x^2 &amp; \text{ si } &amp; x&gt;0,\\
+        x &amp; \text{ si } &amp; x\leq 0
+    \end{array}
+    \right.
+\]</span></p>
+<p>Notemos que como solo necesitamos la llave de apertura es necesario agregar el comando <code>\right.</code> para no causar conflictos en la escritura.</p>
+</section>
+<section id="matrices" class="level2" data-number="3.16">
+<h2 data-number="3.16" class="anchored" data-anchor-id="matrices"><span class="header-section-number">3.16</span> Matrices</h2>
+<p>Con el mismo comando <code>\begin{array}</code> podemos escribir matrices con la cantidad de filas y columnas que necesitemos. Es importante que al inicio y final del comando escribamos unos parentesís con ajustes.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\left</span>(</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\begin</span>{<span class="ex">array</span>}{ccc}</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>        1 &amp; 2 &amp; 3 &amp; 4 <span class="fu">\\</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>        1 &amp; 2 &amp; 3 &amp; 4 <span class="fu">\\</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>        1 &amp; 2 &amp; 3 &amp; 4 <span class="fu">\\</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>        1 &amp; 2 &amp; 3 &amp; 4 <span class="fu">\\</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\end</span>{<span class="ex">array</span>}</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\right</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math display">\[
+\left(
+    \begin{array}{cccc}
+        1 &amp; 2 &amp; 3 &amp; 4 \\
+        1 &amp; 2 &amp; 3 &amp; 4 \\
+        1 &amp; 2 &amp; 3 &amp; 4 \\
+        1 &amp; 2 &amp; 3 &amp; 4 \\
+    \end{array}
+    \right)
+\]</span></p>
+</section>
+<section id="crear-comandos-personalizados" class="level2" data-number="3.17">
+<h2 data-number="3.17" class="anchored" data-anchor-id="crear-comandos-personalizados"><span class="header-section-number">3.17</span> Crear comandos personalizados</h2>
+<p>Una de las grandes ventajas que tenemos es que podemos adecuar los comandos a nuestra escritura y nuestra lógica, es decir, podemos crear comandos propios que nos sirven para agilizar nuestra redacción. Para lograr esto se hace uso del comando <code>\newcommand{"aquí va el nuevo comando"}{"aquí va la expresión"}</code>. Te pongo un ejemplo:</p>
+<p>Dentro de todas las letras griegas existe una muy utilizada que es el <em>epsilon</em> <span class="math inline">\(\epsilon\)</span>, sin embargo, es común utilizar en su lugar la variación de <code>\varepsilon</code> <span class="math inline">\(\varepsilon\)</span>, veamos que este comando es algo largo de escribir y seguramente durante un texto donde se requiera escribirlo mucho se vuelve cansado, por eso optamos por crear un comando nuevo, para este ejemplo este comando nuevo será el comando <code>\ve</code>, una contracción de la palabra completa. Nuestro nuevo comando quedaría así:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\ve</span>}{<span class="fu">\varepsilon</span>}</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="ss">$</span><span class="sc">\ve</span><span class="ss">$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math display">\[
+\varepsilon
+\]</span></p>
+<p>Pero esta elección es arbitraria, podemos utilizar cualquier palabra para crear este comando. Otra forma de hacer esto es con el comando <code>\renewcommand{\ve}{\varepsilon}</code>, en este caso sustituye el comando <code>\ve</code> al <code>\varepsilon</code>. Otros ejemplos de usos:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Comando original</th>
+<th>Comando nuevo</th>
+<th>Impresión</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>\displaystyle</code></td>
+<td><code>\ds</code></td>
+<td><span class="math inline">\(\displaystyle\)</span></td>
+</tr>
+<tr class="even">
+<td><code>\mathbb{R}</code></td>
+<td><code>\R</code></td>
+<td><span class="math inline">\(\mathbb{R}\)</span></td>
+</tr>
+<tr class="odd">
+<td><code>\sum_{i=1}^n</code></td>
+<td><code>\sumin</code></td>
+<td><span class="math inline">\(\sum_{i=1}^n\)</span></td>
+</tr>
+<tr class="even">
+<td><code>\newline</code></td>
+<td><code>\nl</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>\f:\R \to \R</code></td>
+<td><code>\frr</code></td>
+<td><span class="math inline">\(f:\mathbb{R} \to \mathbb{R}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>La última variante del comando <code>\newcommand</code> es el siguiente:</p>
+<p>Como ya se vio, podemos ajustar parentesís, corchetes o llaves al tamaño que necesite la ecuación. Pero, podemos hacer uso del comando <code>\newcommand</code> para evitar escribir <code>\left</code> y <code>\right</code> cada que se requiera. Por ejemplo, para los parentesís:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newcommand</span>{<span class="ex">\parentesis</span>}[1]{<span class="fu">\left</span>(#1<span class="fu">\right</span>)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>\parentesis</code>: Es el comando nuevo</p>
+<p><code>[1]</code>: es para indicar el argumento, es decir, se acepta un argumento.</p>
+<p><code>\left(#1\right)</code>: Es para encerrar entre parentesís al argumento.</p>
+<p>Y la forma de utilizarse sería:</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">equation*</span>}</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="ss">    </span><span class="sc">\parentesis</span><span class="ss">{</span><span class="sc">\dfrac</span><span class="ss">{x^2-4x+1}{x^3+9}}</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">equation*</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math display">\[
+\newcommand{\parentesis}[1]{\left(#1\right)}
+\parentesis{\dfrac{x^2-4x+1}{x^3+9}}
 \]</span></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
