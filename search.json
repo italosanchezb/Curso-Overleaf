@@ -4,9 +4,9 @@
     "href": "index.html",
     "title": "Curso Overleaf 2025",
     "section": "",
-    "text": "Preface\nEn esta página encontrarás todo lo relacionado al curso de overleaf.",
+    "text": "Introducción\nEn esta página podrás encontrar todo lo relacionado con el Curso de Introducción a Overleaf 2025 llevado a cabo en el Laboratorio de Matemáticas del Departamento de Matemáticas en la Universidad de Sonora.",
     "crumbs": [
-      "Preface"
+      "Introducción"
     ]
   },
   {
@@ -267,6 +267,106 @@
     "text": "3.17 Crear comandos personalizados\nUna de las grandes ventajas que tenemos es que podemos adecuar los comandos a nuestra escritura y nuestra lógica, es decir, podemos crear comandos propios que nos sirven para agilizar nuestra redacción. Para lograr esto se hace uso del comando \\newcommand{\"aquí va el nuevo comando\"}{\"aquí va la expresión\"}. Te pongo un ejemplo:\nDentro de todas las letras griegas existe una muy utilizada que es el epsilon \\(\\epsilon\\), sin embargo, es común utilizar en su lugar la variación de \\varepsilon \\(\\varepsilon\\), veamos que este comando es algo largo de escribir y seguramente durante un texto donde se requiera escribirlo mucho se vuelve cansado, por eso optamos por crear un comando nuevo, para este ejemplo este comando nuevo será el comando \\ve, una contracción de la palabra completa. Nuestro nuevo comando quedaría así:\n\\renewcommand{\\ve}{\\varepsilon}\n$\\ve$\n\\[\n\\varepsilon\n\\]\nPero esta elección es arbitraria, podemos utilizar cualquier palabra para crear este comando. Otra forma de hacer esto es con el comando \\renewcommand{\\ve}{\\varepsilon}, en este caso sustituye el comando \\ve al \\varepsilon. Otros ejemplos de usos:\n\n\n\nComando original\nComando nuevo\nImpresión\n\n\n\n\n\\displaystyle\n\\ds\n\\(\\displaystyle\\)\n\n\n\\mathbb{R}\n\\R\n\\(\\mathbb{R}\\)\n\n\n\\sum_{i=1}^n\n\\sumin\n\\(\\sum_{i=1}^n\\)\n\n\n\\newline\n\\nl\n\n\n\n\\f:\\R \\to \\R\n\\frr\n\\(f:\\mathbb{R} \\to \\mathbb{R}\\)\n\n\n\nLa última variante del comando \\newcommand es el siguiente:\nComo ya se vio, podemos ajustar parentesís, corchetes o llaves al tamaño que necesite la ecuación. Pero, podemos hacer uso del comando \\newcommand para evitar escribir \\left y \\right cada que se requiera. Por ejemplo, para los parentesís:\n\\newcommand{\\parentesis}[1]{\\left(#1\\right)}\n\\parentesis: Es el comando nuevo\n[1]: es para indicar el argumento, es decir, se acepta un argumento.\n\\left(#1\\right): Es para encerrar entre parentesís al argumento.\nY la forma de utilizarse sería:\n\\begin{equation*}\n    \\parentesis{\\dfrac{x^2-4x+1}{x^3+9}}\n\\end{equation*}\n\\[\n\\newcommand{\\parentesis}[1]{\\left(#1\\right)}\n\\parentesis{\\dfrac{x^2-4x+1}{x^3+9}}\n\\]",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Comandos</span>"
+    ]
+  },
+  {
+    "objectID": "extra.html",
+    "href": "extra.html",
+    "title": "4  Funciones Avanzadas",
+    "section": "",
+    "text": "4.1 Tablas\nPara crear una tabla se utiliza el comando \\begin{table}, este comando por defecto nos arroja una lista de otros comandos que son los que conforman la tabla:\nVamos a repasar cada uno para conocer su función:\nUn ejemplo de una tabla sería la siguiente:",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Funciones Avanzadas</span>"
+    ]
+  },
+  {
+    "objectID": "extra.html#tablas",
+    "href": "extra.html#tablas",
+    "title": "4  Funciones Avanzadas",
+    "section": "",
+    "text": "\\begin{table}[]\n                \\centering\n                \\begin{tabular}{c|c}\n                     &  \\\\\n                     & \n                \\end{tabular}\n                \\caption{Caption}\n                \\label{tab:my_label}\n            \\end{table}\n\n\n[] : Los corchetes se utilizan para forzar a que Overleaf acomode la tabla exactamente donde queremos, en caso contrario acomoda la tabla en la mejor posición acorde al documento.\n\\begin{tabular}{c|c}: Este comando crea una tabulación, es decir, va a acomodar los datos de forma que queden en renglones. Cada renglón se separa por \\\\ y cada columna por \\&. En las segundas llaves cada c representa una columna y si agregamos | imprimirá una línea vértical entre columna y columna. Si queremos agregar una línea vértical se debe agregar el comando \\hline después de los saltos de línea \\\\.\n\\caption{}: Dentro de las llaves de este comando va la información que aportamos con la tabla.\n\\label{} : Este comando se utiliza para darle un nombre de identidad a la tabla, este no aparece impreso en el documento y solo se utiliza para referencias.\n\n\n\\begin{table}[]\n                \\centering\n                \\begin{tabular}{|c|c|}\\hline\n                    Función & Derivada  \\\\ \\hline\n                    $a$  & $0$ \\\\ \\hline \n                    $ax$ & $a$ \\\\ \\hline\n                    $ax^n$ & $anx^{n-1}$ \\\\ \\hline\n                \\end{tabular}\n                \\caption{Derivadas}\n                \\label{tab:my_label}\n            \\end{table}\n\n\n\n\n\n\nFigure 4.1",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Funciones Avanzadas</span>"
+    ]
+  },
+  {
+    "objectID": "extra.html#insertar-figuras",
+    "href": "extra.html#insertar-figuras",
+    "title": "4  Funciones Avanzadas",
+    "section": "4.2 Insertar figuras",
+    "text": "4.2 Insertar figuras",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Funciones Avanzadas</span>"
+    ]
+  },
+  {
+    "objectID": "extra.html#insertar-url",
+    "href": "extra.html#insertar-url",
+    "title": "4  Funciones Avanzadas",
+    "section": "4.3 Insertar URL",
+    "text": "4.3 Insertar URL",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Funciones Avanzadas</span>"
+    ]
+  },
+  {
+    "objectID": "extra.html#teoremas-proposiciones-corolarios",
+    "href": "extra.html#teoremas-proposiciones-corolarios",
+    "title": "4  Funciones Avanzadas",
+    "section": "4.4 Teoremas, Proposiciones, Corolarios",
+    "text": "4.4 Teoremas, Proposiciones, Corolarios",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Funciones Avanzadas</span>"
+    ]
+  },
+  {
+    "objectID": "extra.html#crear-una-portada",
+    "href": "extra.html#crear-una-portada",
+    "title": "4  Funciones Avanzadas",
+    "section": "4.5 Crear una portada",
+    "text": "4.5 Crear una portada",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Funciones Avanzadas</span>"
+    ]
+  },
+  {
+    "objectID": "extra.html#crear-índice",
+    "href": "extra.html#crear-índice",
+    "title": "4  Funciones Avanzadas",
+    "section": "4.6 Crear índice",
+    "text": "4.6 Crear índice",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Funciones Avanzadas</span>"
+    ]
+  },
+  {
+    "objectID": "extra.html#notas-al-pie",
+    "href": "extra.html#notas-al-pie",
+    "title": "4  Funciones Avanzadas",
+    "section": "4.7 Notas al pie",
+    "text": "4.7 Notas al pie",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Funciones Avanzadas</span>"
+    ]
+  },
+  {
+    "objectID": "extra.html#citas",
+    "href": "extra.html#citas",
+    "title": "4  Funciones Avanzadas",
+    "section": "4.8 Citas",
+    "text": "4.8 Citas",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Funciones Avanzadas</span>"
+    ]
+  },
+  {
+    "objectID": "extra.html#bibliografía",
+    "href": "extra.html#bibliografía",
+    "title": "4  Funciones Avanzadas",
+    "section": "4.9 Bibliografía",
+    "text": "4.9 Bibliografía",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Funciones Avanzadas</span>"
     ]
   }
 ]

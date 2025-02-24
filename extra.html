@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Ítalo Sánchez Bermúdez">
 
-<title>Curso Overleaf 2025</title>
+<title>4&nbsp; Funciones Avanzadas – Curso Overleaf 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -31,7 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./paqueterias.html" rel="next">
+<link href="./references.html" rel="next">
+<link href="./comandos.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -81,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Introducción</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./extra.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Funciones Avanzadas</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -111,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introducción</span></a>
   </div>
 </li>
@@ -135,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./extra.html" class="sidebar-item-text sidebar-link">
+  <a href="./extra.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Funciones Avanzadas</span></span></a>
   </div>
 </li>
@@ -155,7 +189,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción">Introducción</a></li>
+  <li><a href="#tablas" id="toc-tablas" class="nav-link active" data-scroll-target="#tablas"><span class="header-section-number">4.1</span> Tablas</a></li>
+  <li><a href="#insertar-figuras" id="toc-insertar-figuras" class="nav-link" data-scroll-target="#insertar-figuras"><span class="header-section-number">4.2</span> Insertar figuras</a></li>
+  <li><a href="#insertar-url" id="toc-insertar-url" class="nav-link" data-scroll-target="#insertar-url"><span class="header-section-number">4.3</span> Insertar URL</a></li>
+  <li><a href="#teoremas-proposiciones-corolarios" id="toc-teoremas-proposiciones-corolarios" class="nav-link" data-scroll-target="#teoremas-proposiciones-corolarios"><span class="header-section-number">4.4</span> Teoremas, Proposiciones, Corolarios</a></li>
+  <li><a href="#crear-una-portada" id="toc-crear-una-portada" class="nav-link" data-scroll-target="#crear-una-portada"><span class="header-section-number">4.5</span> Crear una portada</a></li>
+  <li><a href="#crear-índice" id="toc-crear-índice" class="nav-link" data-scroll-target="#crear-índice"><span class="header-section-number">4.6</span> Crear índice</a></li>
+  <li><a href="#notas-al-pie" id="toc-notas-al-pie" class="nav-link" data-scroll-target="#notas-al-pie"><span class="header-section-number">4.7</span> Notas al pie</a></li>
+  <li><a href="#citas" id="toc-citas" class="nav-link" data-scroll-target="#citas"><span class="header-section-number">4.8</span> Citas</a></li>
+  <li><a href="#bibliografía" id="toc-bibliografía" class="nav-link" data-scroll-target="#bibliografía"><span class="header-section-number">4.9</span> Bibliografía</a></li>
   </ul>
 </nav>
     </div>
@@ -164,26 +206,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Curso Overleaf 2025</h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Funciones Avanzadas</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Ítalo Sánchez Bermúdez </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">Invalid Date</p>
-    </div>
-  </div>
   
     
   </div>
@@ -193,9 +223,71 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introducción" class="level1 unnumbered">
-<h1 class="unnumbered">Introducción</h1>
-<p>En esta página podrás encontrar todo lo relacionado con el Curso de Introducción a Overleaf 2025 llevado a cabo en el Laboratorio de Matemáticas del Departamento de Matemáticas en la Universidad de Sonora.</p>
+<section id="tablas" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="tablas"><span class="header-section-number">4.1</span> Tablas</h2>
+<p>Para crear una tabla se utiliza el comando <code>\begin{table}</code>, este comando por defecto nos arroja una lista de otros comandos que son los que conforman la tabla:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">table</span>}[]</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                <span class="fu">\centering</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                <span class="kw">\begin</span>{<span class="ex">tabular</span>}{c|c}</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>                     <span class="op">&amp;</span>  <span class="fu">\\</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                     <span class="op">&amp;</span> </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                <span class="kw">\end</span>{<span class="ex">tabular</span>}</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>                <span class="fu">\caption</span>{Caption}</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                <span class="kw">\label</span>{<span class="ex">tab:my_label</span>}</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>            <span class="kw">\end</span>{<span class="ex">table</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Vamos a repasar cada uno para conocer su función:</p>
+<ul>
+<li><p><code>[]</code> : Los corchetes se utilizan para forzar a que Overleaf acomode la tabla exactamente donde queremos, en caso contrario acomoda la tabla en la mejor posición acorde al documento.</p></li>
+<li><p><code>\begin{tabular}{c|c}</code>: Este comando crea una tabulación, es decir, va a acomodar los datos de forma que queden en renglones. Cada renglón se separa por <code>\\</code> y cada columna por <code>\&amp;</code>. En las segundas llaves cada <code>c</code> representa una columna y si agregamos <code>|</code> imprimirá una línea vértical entre columna y columna. Si queremos agregar una línea vértical se debe agregar el comando <code>\hline</code> después de los saltos de línea <code>\\</code>.</p></li>
+<li><p><code>\caption{}</code>: Dentro de las llaves de este comando va la información que aportamos con la tabla.</p></li>
+<li><p><code>\label{}</code> : Este comando se utiliza para darle un nombre de identidad a la tabla, este no aparece impreso en el documento y solo se utiliza para referencias.</p></li>
+</ul>
+<p>Un ejemplo de una tabla sería la siguiente:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">table</span>}[]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                <span class="fu">\centering</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                <span class="kw">\begin</span>{<span class="ex">tabular</span>}{|c|c|}<span class="fu">\hline</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                    Función <span class="op">&amp;</span> Derivada  <span class="fu">\\</span> <span class="fu">\hline</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                    <span class="ss">$a$</span>  <span class="op">&amp;</span> <span class="ss">$0$</span> <span class="fu">\\</span> <span class="fu">\hline</span> </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                    <span class="ss">$ax$</span> <span class="op">&amp;</span> <span class="ss">$a$</span> <span class="fu">\\</span> <span class="fu">\hline</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                    <span class="ss">$ax^n$</span> <span class="op">&amp;</span> <span class="ss">$anx^{n-1}$</span> <span class="fu">\\</span> <span class="fu">\hline</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>                <span class="kw">\end</span>{<span class="ex">tabular</span>}</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>                <span class="fu">\caption</span>{Derivadas}</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>                <span class="kw">\label</span>{<span class="ex">tab:my_label</span>}</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>            <span class="kw">\end</span>{<span class="ex">table</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fig-grafica" class="quarto-float quarto-figure quarto-figure-center anchored" width="70%">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-grafica-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="derivadas.png" id="fig-grafica" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-grafica-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.1
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="insertar-figuras" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="insertar-figuras"><span class="header-section-number">4.2</span> Insertar figuras</h2>
+</section>
+<section id="insertar-url" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="insertar-url"><span class="header-section-number">4.3</span> Insertar URL</h2>
+</section>
+<section id="teoremas-proposiciones-corolarios" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="teoremas-proposiciones-corolarios"><span class="header-section-number">4.4</span> Teoremas, Proposiciones, Corolarios</h2>
+</section>
+<section id="crear-una-portada" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="crear-una-portada"><span class="header-section-number">4.5</span> Crear una portada</h2>
+</section>
+<section id="crear-índice" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="crear-índice"><span class="header-section-number">4.6</span> Crear índice</h2>
+</section>
+<section id="notas-al-pie" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="notas-al-pie"><span class="header-section-number">4.7</span> Notas al pie</h2>
+</section>
+<section id="citas" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="citas"><span class="header-section-number">4.8</span> Citas</h2>
+</section>
+<section id="bibliografía" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="bibliografía"><span class="header-section-number">4.9</span> Bibliografía</h2>
 
 
 </section>
@@ -623,10 +715,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./comandos.html" class="pagination-link" aria-label="Comandos">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Comandos</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./paqueterias.html" class="pagination-link" aria-label="Paqueterías">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Paqueterías</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
