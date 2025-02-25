@@ -290,11 +290,11 @@
     ]
   },
   {
-    "objectID": "extra.html#insertar-figuras",
-    "href": "extra.html#insertar-figuras",
+    "objectID": "extra.html#insertar-imágenes",
+    "href": "extra.html#insertar-imágenes",
     "title": "4  Funciones Avanzadas",
-    "section": "4.2 Insertar figuras",
-    "text": "4.2 Insertar figuras",
+    "section": "4.2 Insertar Imágenes",
+    "text": "4.2 Insertar Imágenes\nPara insertar una imagen en un documento hay distintas maneras, en este caso se hará uso del entorno \\begin{figure}, por defecto nos despliega el siguiente codigo\n\\begin{figure}\n    \\centering\n    \\includegraphics[width=0.5\\linewidth]{}\n    \\caption{Caption}\n    \\label{fig:enter-label}\n\\end{figure}\nAquí la explicación de cada tema:\n\n\\centering: Este comando hace que la figura quede en el centro del documento.\n\\includegraphics[width=0.5\\linewidth]{}: width= define el ancho de la imagen, 0.5\\linewidth significa que la imagen ocupará el 50% del ancho del texto donde está insertada. Se puede cambiar 0.5 por otro valor, como 0.8\\linewidth para que ocupe el 80%. Dentro de las llaves debe estar el nombre de la figura (imagen) a insertar.1 2\n\n\n\\caption{}: Dentro de las llaves va la información relativa a la imagen.\nlabel{}: Dentro de las llaves va la etiqueta que queremos ponerle a la figura, esta etiqueta no aparece en el documento y solo sirve para referenciar la figura.\n\nEste es un ejemplo de insertar una imagen que previamente subimos con nombre derivadas.png y su respectiva información:\n\\begin{figure}[h]\n    \\centering\n    \\includegraphics[width=0.5\\linewidth]{derivada.png}\n    \\caption{Las rectas secantes $S_1,S_2,...,$ tienden a $T$, la recta tangente a la gráfica en el punto $(x_0,f(x_0))$ cuando $h\\to 0$.}\n    \\label{derivada}\n\\end{figure}\n\n\n\n\n\n\nFigure 4.2",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Funciones Avanzadas</span>"
     ]
@@ -304,7 +304,7 @@
     "href": "extra.html#insertar-url",
     "title": "4  Funciones Avanzadas",
     "section": "4.3 Insertar URL",
-    "text": "4.3 Insertar URL",
+    "text": "4.3 Insertar URL\nPara insertar un URL se puede hacer con dos comando \\href{}{} o \\url{}.\n\nCon el comando \\href{}{} en las primeras llaves se pone el URL y posteriormente se escribe el texto que tendrá ese URL y ese texto es el que se imprime.\nCon el comando \\url{} dentro de las llaves se escribe el URL y ese URL es el que se imprime.\n\nAquí un ejemplo:\nEste es un curso de introducción a \\href{https://www.overleaf.com}{Overleaf}.\n\nPara consultar más información \\url{https://www.overleaf.com/learn}.\nEste es un curso de introducción a Overleaf.\nPara consultar más información https://www.overleaf.com/learn.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Funciones Avanzadas</span>"
     ]
@@ -314,7 +314,7 @@
     "href": "extra.html#teoremas-proposiciones-corolarios",
     "title": "4  Funciones Avanzadas",
     "section": "4.4 Teoremas, Proposiciones, Corolarios",
-    "text": "4.4 Teoremas, Proposiciones, Corolarios",
+    "text": "4.4 Teoremas, Proposiciones, Corolarios\nUna de las herramientas más importantes cuando escribimos libros, tesis o documentos grandes. En estos documentos usualmente escribimos Teoremas, Proposiciones, Corolarios, Observaciones, etc. Estos resultados deben ir numerados y para no hacer esa numeración de forma manual empleamos la paquetería amsthm. El procedimiento es el siguiente:\n\nPrimero elegimos el entorno, es decir, si será un Teorema, Proposición, Corolario, Definición, etc. Para este ejemplo elegimos un Teorema.\nAhora, en el inicio (puede ser inmediatamente después de las paqueterías) del documento agregamos el comando \\newtheorem{}{}.\n\n\\documentclass[12pt]{article}\n% Paquetería\n.\n.\n.\n\\usepackage{amsthm}\n\\newtheorem{}{}\n\nEste comando necesita dos argumentos, el primer argumento es el nombre que utilizamos para llamar al comando, como estamos trabajando con teoremas elegimos them, aunque podrías ser cualquier otro nombre, por ejemplo teorema, teo, th, theorem, etc.\n\n\\documentclass[12pt]{article}\n% Paquetería\n.\n.\n.\n\\usepackage{amsthm}\n\\newtheorem{them}{}\n\nEl segundo argumento es el nombre del entorno, en este ejemplo el nombre del entorno es Teorema.\n\n\\documentclass[12pt]{article}\n% Paquetería\n.\n.\n.\n\\usepackage{amsthm}\n\\newtheorem{them}{Teorema}\n\nPara llamar al entorno se hace con el comando \\begin{them}. En este caso es them pues el nombre que se puso para este ejemplo, pero puede cambiar dependiendo del nombre que se elija.\n\n\\begin{them}\n    Aquí escribimos el Teorema.\n\\end{them}\n3\n\nHay un tercer argumento opcional que se puede agregar y es la numeración en función de donde se ubica el entorno. Sabemos que el documento puede dividirse en Secciones, Subsecciones, Subsubsecciones. Aquí una explicación para el entorno de Teorema:\n\n\nSi el comando lo utilizamos como \\newtheorem{them}{Teorema} va a enumarar solo en orden de aparición:\n\n\\section{Inicio}\n\n    \\subsection{Explicación}\n\n        \\subsubsection{Parte I}\n\n            \\begin{them}\\upshape\n                Este es el primer Teorema.\n            \\end{them}\n\n\n    \\subsection{Problemas}\n\n        \\subsubsection{Parte I}\n\n            \\begin{them}\\upshape\n                Este es el segundo Teorema.\n            \\end{them}\n\n\\section{Desarrollo}\n\n    \\begin{them}\\upshape\n        Este es el tercer Teorema.\n    \\end{them}\n1. Inicio\n1.1. Explicación\n1.1.1. Parte I\nTeorema 1. Este es el primer Teorema.\n1.2. Problemas\n1.2.1. Parte I\nTeorema 2. Este es el segundo Teorema.\n2. Desarrollo\nTeorema 3. Este es el tercer Teorema.\n\nSi el comando lo utilizamos como \\newtheorem{them}{Teorema}[section] va a enumerar primero la Sección y después el orden de aparición dentro de la Sección:\n\n\\section{Inicio}\n\n    \\subsection{Explicación}\n\n        \\subsubsection{Parte I}\n\n            \\begin{them}\\upshape\n                Este es el primer Teorema.\n            \\end{them}\n\n\n    \\subsection{Problemas}\n\n        \\subsubsection{Parte I}\n\n            \\begin{them}\\upshape\n                Este es el segundo Teorema.\n            \\end{them}\n\n\\section{Desarrollo}\n\n    \\begin{them}\\upshape\n        Este es el tercer Teorema.\n    \\end{them}\n1. Inicio\n1.1. Explicación\n1.1.1. Parte I\nTeorema 1.1. Este es el primer Teorema.\n1.2. Problemas\n1.2.1. Parte I\nTeorema 1.2. Este es el segundo Teorema.\n2. Desarrollo\nTeorema 2.1. Este es el tercer Teorema.\n\nSi el comando lo utilizamos como \\newtheorem{them}{Teorema}[subsection] va a enumerar primero la Sección, después la Subsección y por último el orden de aparición dentro de la Subsección:\n\n\\section{Inicio}\n\n    \\subsection{Explicación}\n\n        \\subsubsection{Parte I}\n\n            \\begin{them}\\upshape\n                Este es el primer Teorema.\n            \\end{them}\n\n\n    \\subsection{Problemas}\n\n        \\subsubsection{Parte I}\n\n            \\begin{them}\\upshape\n                Este es el segundo Teorema.\n            \\end{them}\n\n\\section{Desarrollo}\n\n    \\begin{them}\\upshape\n        Este es el tercer Teorema.\n    \\end{them}\n1. Inicio\n1.1. Explicación\n1.1.1. Parte I\nTeorema 1.1.1. Este es el primer Teorema.\n1.2. Problemas\n1.2.1. Parte I\nTeorema 1.2.1. Este es el segundo Teorema.\n2. Desarrollo\nTeorema 2.0.1 Este es el tercer Teorema.\n\nSi el comando lo utilizamos como \\newtheorem{them}{Teorema}[subsubsection] va a enumerar primero la Sección, después la Subsección, luego la Subsubsección y por último el orden de aparición dentro de la Subsubsección:\n\n\\section{Inicio}\n\n    \\subsection{Explicación}\n\n        \\subsubsection{Parte I}\n\n            \\begin{them}\\upshape\n                Este es el primer Teorema.\n            \\end{them}\n\n\n    \\subsection{Problemas}\n\n        \\subsubsection{Parte I}\n\n            \\begin{them}\\upshape\n                Este es el segundo Teorema.\n            \\end{them}\n\n\\section{Desarrollo}\n\n    \\begin{them}\\upshape\n        Este es el tercer Teorema.\n    \\end{them}\n1. Inicio\n1.1. Explicación\n1.1.1. Parte I\nTeorema 1.1.1.1. Este es el primer Teorema.\n1.2. Problemas\n1.2.1. Parte I\nTeorema 1.2.2.1. Este es el segundo Teorema.\n2. Desarrollo\nTeorema 2.0.0.1 Este es el tercer Teorema.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Funciones Avanzadas</span>"
     ]
@@ -324,7 +324,7 @@
     "href": "extra.html#crear-una-portada",
     "title": "4  Funciones Avanzadas",
     "section": "4.5 Crear una portada",
-    "text": "4.5 Crear una portada",
+    "text": "4.5 Crear una portada\nLa creación de una portada requiere del comando \\begin{titlepage}, aunque existen otras maneras de hacerlo. La estructura que tendrá nuestra portada es la siguiente:\n\nLogo de la Institución\nNombre de la Institución\nTítulo del Documento\nSubtítulo\nAutor\nCurso\nFecha\n\nOtro recurso que será necesario es el ajuste del tamaño de letra en la portada, para ello tenemos esta tabla:\nEn LaTeX, puedes cambiar el tamaño del texto con los siguientes comandos:\n\n\n\nComando\nTamaño relativo\n\n\n\n\n\\Huge\nMuy grande\n\n\n\\huge\nGrande\n\n\n\\LARGE\nMedio-grande\n\n\n\\Large\nUn poco más grande\n\n\n\\large\nLigeramente más grande\n\n\n\\normalsize\nTamaño normal (por defecto)\n\n\n\nAhora sí, los pasos para crear una portada:\n\nCreamos un nuevo archivo .tex, este archivo puede llamarse portada.tex.\nCreado el archivo en blanco agregamos el comando \\begin{titlepage}.\n\n% Portada\n\\begin{titlepage}\n\n\\end{titlepage}\n\nEscribimos el comando \\centering para que la información de la portada quede centrada.\n\n% Portada\n\\begin{titlepage}\n    \\centering\n\\end{titlepage}\n\nCargamos en nuestro documento el logo de nuestra institución (se le puede poner el nombre de logo, aunque es opcional)y se utiliza el comando \\includegraphics[width=0.3\\textwidth]{logo.png}, el tamaño del logo, como ya vimos, lo podemos modificar a nuestro gusto o necesidad. Además, al final de la línea de código agregamos \\\\[1cm], esto para que el logo quede separado vérticalmente en 1 cm. También podemos cambiar esa separación a nuestro gusto.\n\n% Portada\n\\begin{titlepage}\n    \\centering\n% Logo\n    \\includegraphics[width=0.3\\textwidth]{logo.png} \\\\[1cm]\n\\end{titlepage}\n\nPara agregar el nombre de la institución se hace entre llaves y se utiliza algún comando para cambiar el tamaño del texto.\n\n% Portada\n\\begin{titlepage}\n    \\centering\n% Logo\n    \\includegraphics[width=0.3\\textwidth]{logo.png} \\\\[1cm]\n% Nombre Institución\n    {\\Huge Universidad de Sonora}\\\\[1cm]\n\\end{titlepage}\n\nSiguiendo el procedimiento del punto anterior se agrega el título, subtítulo, autor, curso y fecha.\n\n% Portada\n\\begin{titlepage}\n    \\centering\n% Logo\n    \\includegraphics[width=0.3\\textwidth]{logo.png} \\\\[1cm]\n% Nombre Institución\n    {\\Huge Universidad de Sonora}\\\\[1cm]\n% Título\n    {\\LARGE Introducción al Cálculo}\\\\[1cm]\n% Subtítulo\n    {\\Large Teoría y Ejercicios}\\\\[1cm]\n% Autor\n    {\\large José Ítalo Sánchez Bermúdez}\\\\[1cm]\n% Curso\n    {\\large Curso Overelaf 2025}\\\\[1cm]\n% Fecha\n    {\\large \\today}\\\\[1cm]\n\\end{titlepage}\n\nPor último, para que la portada se integre en nuestro documento se usa el comando \\input{portada} (o el nombre que le pusimos al archivo). Este comando se pone inmediatamente después del comando \\begin{document}.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Funciones Avanzadas</span>"
     ]
@@ -334,7 +334,7 @@
     "href": "extra.html#crear-índice",
     "title": "4  Funciones Avanzadas",
     "section": "4.6 Crear índice",
-    "text": "4.6 Crear índice",
+    "text": "4.6 Crear índice\nOtro elemento importante agregar en ciertos documentos es el índice, por suerte existe un comando que lo hace directamente por nosotros, pero al igual que otras herramientas, se puede personalizar. Para agregar el índice se usa el comando \\tableofcontents, este comando se pone después del comando \\input{portada} o si no existe portada después del \\begin{document}. Además se acompaña del comando \\newpage para repararse del resto del texto.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Funciones Avanzadas</span>"
     ]
@@ -344,17 +344,17 @@
     "href": "extra.html#notas-al-pie",
     "title": "4  Funciones Avanzadas",
     "section": "4.7 Notas al pie",
-    "text": "4.7 Notas al pie",
+    "text": "4.7 Notas al pie\nOtro elemento que aparece en algunos documentos son las notas al pie, estas se agregan con el comando \\footnote{\"texto de la nota\"}, este comando se pone donde queremos que salga la referencia a la nota y automáticamente se enumera.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Funciones Avanzadas</span>"
     ]
   },
   {
-    "objectID": "extra.html#citas",
-    "href": "extra.html#citas",
+    "objectID": "extra.html#citas-y-referencias",
+    "href": "extra.html#citas-y-referencias",
     "title": "4  Funciones Avanzadas",
-    "section": "4.8 Citas",
-    "text": "4.8 Citas",
+    "section": "4.8 Citas y Referencias",
+    "text": "4.8 Citas y Referencias\n\n4.8.1 Referencias Cruzadas\nPara generar una referencia cruzada (referenciar algo del mismo documento) es con el comando \\ref{\"etiqueta del objeto\"}, para utilizarlo se necesita que el objeto esté etiquetado con el comando \\label{}, por defecto aparecerá el número del objeto (número de la ecuación, del Teorema o de la Figura), pero podemos cambiar ese nombre con el comando \\tag{}.\n\n\n4.8.2 Referencias Externas\nPor otra parte si necesitamos hacer una cita, ya sea a un libro, una página, un artículo, etc. Se utiliza el comando \\cite{\"nombre de la cita\"}. En el siguiente apartado se profundiza en este comando.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Funciones Avanzadas</span>"
     ]
@@ -364,7 +364,17 @@
     "href": "extra.html#bibliografía",
     "title": "4  Funciones Avanzadas",
     "section": "4.9 Bibliografía",
-    "text": "4.9 Bibliografía",
+    "text": "4.9 Bibliografía\nPara finalizar nuestro documento se agregan las referencias que sirvieron para crearlo. Para los pasos para la bibliografía son los siguientes:\n\nSe debe crear un archivo .bib, este archivo puede llamarse referencias.bib.\nEn este punto debemos tener la lista de las referencias que se usaron en el documento. Ahora debemos buscar las referencias en internet y descargar la información de la referencia en formato bibtex.\nEsa información que se descargó se agrega en el archivo referencias.bib. Por ejemplo aquí la información en bibtex del libro Calculus de Michael Spivak, esta información se obtuvo de Google Books.\n\n@book{spivak2006calculus,\n  title={Calculus},\n  author={Spivak, M.},\n  isbn={9780521867443},\n  lccn={80082517},\n  series={Calculus},\n  url={https://books.google.com.mx/books?id=7JKVu_9InRUC},\n  year={2006},\n  publisher={Cambridge University Press}\n}\nLas únicas observaciones de esta información es la sobre la primer línea.\n\n@book: Nos indica el tipo de archivo, en este caso es un libro.\nspivak2006calculus: Esta es la etiqueta que viene con la información y podemos modificarla a nuestro gusto, por ejemplo podríamos hacer que se llame solamente spivak.\n\n@book{spivak,\n  title={Calculus},\n  author={Spivak, M.},\n  isbn={9780521867443},\n  lccn={80082517},\n  series={Calculus},\n  url={https://books.google.com.mx/books?id=7JKVu_9InRUC},\n  year={2006},\n  publisher={Cambridge University Press}\n}\n\nPara que aparezca la referencia en la hoja de Bibliografía se debe citar durante el texto, esto es con el comando \\cite{} y dentro del comando va la etiqueta que pusimos en el archivo. Por ejemplo:\n\n Para este documento se utiliz el libro \\cite{spivak}.\nPara este documento se utilizó el libro [1]. 4\n\nPor último, para que se imprima la bibliografía es con el comando \\bibliography{\"nombre del archivo de referencias\"}.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Funciones Avanzadas</span>"
+    ]
+  },
+  {
+    "objectID": "extra.html#footnotes",
+    "href": "extra.html#footnotes",
+    "title": "4  Funciones Avanzadas",
+    "section": "",
+    "text": "Otro comando que se puede utilizar para modificar el tamaño de la imagen es scale =, que reescala la imagen al tamaño deseado.↩︎\nEl comando \\includegraphics es posible usarlo fuera del entorno \\begin{figure}.↩︎\nPor defecto se imprime el texto en cursivas, si queremos quitar las cursivas se agrega al principio el comando \\upshape.↩︎\nLa numeración depende del formato que se utiliza para las bibliografías. El orden puede ser por aparición o por orden alfabético.↩︎",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Funciones Avanzadas</span>"
     ]
