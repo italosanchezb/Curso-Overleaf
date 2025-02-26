@@ -378,5 +378,25 @@
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Funciones Avanzadas</span>"
     ]
+  },
+  {
+    "objectID": "descargas.html",
+    "href": "descargas.html",
+    "title": "5  Material del Curso y Proyectos",
+    "section": "",
+    "text": "5.1 Proyecto\nUna parte importante de este curso es el proyecto final, aquí se dejan las propuestas:",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Material del Curso y Proyectos</span>"
+    ]
+  },
+  {
+    "objectID": "descargas.html#proyecto",
+    "href": "descargas.html#proyecto",
+    "title": "5  Material del Curso y Proyectos",
+    "section": "",
+    "text": "Álgebra Lineal\n\nÁlgebra Lineal y sus Aplicaciones - Lay\n\nCapítulo 1: Ecuaciones lineales en álgebra lineal\nCapítulo 2: Álgebra de Matrices\nCapítulo 4: Espacios Vectoriales\n\n\nÁlgebra Superior\n\nÁlgebra Superior - Cárdenas\n\nCapítulo 6: El anillo de los números enteros\nCapítulo 8: Los Números Reales\nCapítulo 9: El campo de los Números Complejos\nCapítulo 10: Polinomios y teoría de ecuaciones\n\n\nAnálisis Matemático\n\nAnálisis Matemático - Apostol\n\nCualquier capítulo\n\n\nAnálisis Numérico\n\nAnálisis Numérico - Burden\n\nCapítulo 2: Soluciones de las ecuaciones en una variable\n\n\nEstadística\n\nEstadística Elemental - Kuby\n\nCapítulo 1: Estadística\n\n\nGeometría Analítica\n\nGeometría Analítica - Lehmann\n\nCapítulo 3: La línea recta\nCapítulo 4: Ecuación de la circunferencia\nCapítulo 6: La parábola\nCapítulo 7: La elipse\nCapítulo 8: La hipérbola\nCapítulo 9: La ecuación de segundo grado\n\n\nTeoría de Números\n\nIntroducción a la Teoría de los Números - Zuckerman\n\nCapítulo 1: Divisibilidad",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Material del Curso y Proyectos</span>"
+    ]
   }
 ]
